@@ -1,0 +1,4 @@
+# Password folder
+.secrets
+# database created by MySQL
+database

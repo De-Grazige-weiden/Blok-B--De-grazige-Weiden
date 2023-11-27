@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+  db:
+    # MySQL Image used for the database
+    image: mysql:8.2.0
+    ports: 
+      - 3306:3306
+    volumes:
+      - ./database:/var/lib/mysql
+      - ./databaseInitScript:/docker-entrypoint-initdb.d:ro
+    # Using secrets for sensitive information
+    secrets:
+      - MYSQL_PASSWORD_FILE
+      - MYSQL_ROOT_PASSWORD_FILE
+    # Environment variables for MySQL configuration
+    environment:
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/MYSQL_ROOT_PASSWORD_FILE
+      - MYSQL_USER=portfolio
+      - MYSQL_PASSWORD_FILE=/run/secrets/MYSQL_PASSWORD_FILE
+      - MYSQL_DATABASE=portfolioWebsite
+  
+  phpmyadmin:
+    # PHP my admin to manage the database
+    image: phpmyadmin:5.2.1
+    # Port 8080 is mapped to be used on the outside as to not conflict with the apache build
+    ports:
+      - 8080:80
+    # Depends on db to start first
+    depends_on:
+      - db
+
+  apache:
+    # The Apache image is build using the dockerfile
+    build: .
+    ports:
+      - 80:80
+    # the src folder is mapped to wwww/html on the inside. This will allow apache to see what I edit in ./src
+    volumes:
+      - ./src:/var/www/html:src
+    # Depends on db to start first
+    depends_on:
+      - db
+    secrets:
+      - MYSQL_PASSWORD_FILE
+secrets:
+  # Secret files containing the MySQL passwords 
+  MYSQL_PASSWORD_FILE:
+      file: ./.secrets/MYSQL_PASSWORD_FILE
+  MYSQL_ROOT_PASSWORD_FILE:
+      file: ./.secrets/MYSQL_ROOT_PASSWORD_FILE
+
