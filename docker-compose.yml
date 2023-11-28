@@ -16,9 +16,7 @@ services:
     # Environment variables for MySQL configuration
     environment:
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/MYSQL_ROOT_PASSWORD_FILE
-      - MYSQL_USER=portfolio
-      - MYSQL_PASSWORD_FILE=/run/secrets/MYSQL_PASSWORD_FILE
-      - MYSQL_DATABASE=portfolioWebsite
+      - MYSQL_DATABASE=schnitzel
   
   phpmyadmin:
     # PHP my admin to manage the database
@@ -45,8 +43,6 @@ services:
       - MYSQL_PASSWORD_FILE
 secrets:
   # Secret files containing the MySQL passwords 
-  MYSQL_PASSWORD_FILE:
-      file: ./.secrets/MYSQL_PASSWORD_FILE
   MYSQL_ROOT_PASSWORD_FILE:
       file: ./.secrets/MYSQL_ROOT_PASSWORD_FILE
 
