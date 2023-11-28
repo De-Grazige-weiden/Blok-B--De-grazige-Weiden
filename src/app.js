@@ -60,7 +60,6 @@ const express = require('express');
 const app = express();
 var nodemailer = require('nodemailer');
 
-
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -70,7 +69,7 @@ var transporter = nodemailer.createTransport({
 });
 
 function createMailOptions(klant) {
-  return {
+  return {                                                                                                      
       from: 'aleksvansanten@gmail.com',
       to: klant.email,
       subject: 'Bevestiging van Reservering',
@@ -89,7 +88,6 @@ Met vriendelijke groet,
 Aleksander van Santen (Medewerker De Groene Weide)`
   };
 }
-
 
 let klant = {
   email: "aleksvansanten@gmail.com",
