@@ -32,6 +32,7 @@ services:
     build: .
     ports:
       - 80:80
+      - 443:443
     # the src folder is mapped to wwww/html on the inside. This will allow apache to see what I edit in ./src
     volumes:
       - ./src:/var/www/html
