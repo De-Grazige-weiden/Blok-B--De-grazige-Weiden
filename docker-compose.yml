@@ -34,7 +34,7 @@ services:
       - 80:80
     # the src folder is mapped to wwww/html on the inside. This will allow apache to see what I edit in ./src
     volumes:
-      - ./src:/var/www/html:src
+      - ./src:/var/www/html
     # Depends on db to start first
     depends_on:
       - db
