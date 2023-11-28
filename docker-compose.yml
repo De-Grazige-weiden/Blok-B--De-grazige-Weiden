@@ -11,7 +11,6 @@ services:
       - ./databaseInitScript:/docker-entrypoint-initdb.d:ro
     # Using secrets for sensitive information
     secrets:
-      - MYSQL_PASSWORD_FILE
       - MYSQL_ROOT_PASSWORD_FILE
     # Environment variables for MySQL configuration
     environment:
@@ -40,7 +39,7 @@ services:
     depends_on:
       - db
     secrets:
-      - MYSQL_PASSWORD_FILE
+      - MYSQL_ROOT_PASSWORD_FILE
 secrets:
   # Secret files containing the MySQL passwords 
   MYSQL_ROOT_PASSWORD_FILE:
