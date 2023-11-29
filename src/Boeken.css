@@ -291,6 +291,11 @@ form label {
     font-size:20px;
 }
 
+/*-------------------bevestig knop--------*/
+#bevestigknop {
+    margin-top: 5%;
+}
+
 @media (max-width:1000px) {
     .boeken {
         margin:0 10px 0 10px;
