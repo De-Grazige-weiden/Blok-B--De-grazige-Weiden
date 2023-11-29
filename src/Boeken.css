@@ -7,7 +7,14 @@ body {
     margin:0px;
 }
 
-/* --header-------------------------------------------------------------------------------------------- */
+/* --navbar-------------------------------------------------------------------------------------------- */
+
+.flexheader {
+    position:sticky;
+    top:0;
+    background-color:#fff;
+    min-height:70px;
+}
 
 h1 {
     font-size:40px;
@@ -40,9 +47,6 @@ h2 {
     display:flex;
     padding:0 0 0 40px;
 }
-
-/* --navbar-------------------------------------------------------------------------------------------- */
-
 
 
 .navbar {
@@ -85,7 +89,6 @@ li {
   
   .nav-bar {
     display:flex;
-    min-height:70px;
     justify-content:space-between;
     align-items:center;
     padding:0 24px;
@@ -122,7 +125,7 @@ li {
     background-color:#006400;
   }
 
-@media (max-width:768px){
+@media (max-width:1000px){
     .hamburger {
         display:block;
     }
@@ -160,27 +163,32 @@ li {
 }
 
 /* --einde navbar------------------------------------------------------------------------------------- */
-/* --einde header------------------------------------------------------------------------------------- */ 
 
 
 /* --main--------------------------------------------------------------------------------------------- */
 
-.frontimage {
-    height:calc(100vh - 100px)
-}
 
 /* --boeken------------------------------------------------------------------------------------------- */
+
+/* --boeken niet persoonlijk-------------------------------------------------------------------------- */
+
 
 .vakantieplek {
     display:flex;
     justify-content:space-around;
+    margin:50px 0 0 0;
+}
+
+.gegevensimage {
+    display:flex;
+    flex-direction:column;
+    width:48%;
 }
 
 .vakantiegegevens {
     display:flex;
     flex-direction:column;
-    width:48%;
-    height:500px;
+    height:48%;
     background-color:#69B578;
 }
 
@@ -192,12 +200,20 @@ li {
 .vakantieform {
     display:flex;
     flex-direction:column;
-    padding:20px 20px 20px 40px;
+    padding:20px 20px 40% 40px;
 }
 
-.vakantieimage {
+.vakantieimage1 {
     display:flex;
     width:48%;
+    height:100%;
+}
+
+.vakantieimage2 {
+    display:flex;
+    width:100%;
+    height:37%;
+    padding:4% 0 0 0;    
 }
 
 form label {
@@ -205,17 +221,86 @@ form label {
     padding:20px 0 20px 0;
 }
 
-@media (max-width:768px){
-    .vakantieimage {
+@media (max-width:1000px){
+    .vakantieimage1 {
         display:none;
     }
+
+    .vakantieimage2 {
+        width:100%
+    }
+
     .vakantiegegevens {
+        height:100%;
         width:100%;
+    }
+
+    .gegevensimage {
+        width:100%;
+        margin:0 20px 0 20px;
+    }
+
+}
+
+/* --einde boeken niet persoonlijk-------------------------------------------------------------------- */
+
+/* --boeken persoonlijke gegevens--------------------------------------------------------------------- */
+
+.boeken {
+    display:flex;
+    justify-content:center;
+}
+
+.persoonsgegevens {
+    display:flex;
+    flex-direction:column;
+    background-color:#3A7D44;
+    padding:50px 20px 50px 20px;
+    margin:20px 0 20px 0;
+    border-radius:40px;
+    width:98%;
+}
+
+.gegevensform {
+    padding:0 0 0 20px;
+}
+
+.formtitle {
+    text-align:center;
+    padding:20px;
+}
+
+.formrij1 {
+    padding:0 20px 0 0;
+}
+
+.formrij2 {
+    padding:0 0 0 20px;
+}
+
+.boeken p {
+    text-align:center;
+    padding:20px 0 0 20px;
+}
+
+form {
+    justify-content:center;
+}
+
+form label {
+    font-size:20px;
+}
+
+@media (max-width:1000px) {
+    .boeken {
+        margin:0 10px 0 10px;
     }
 }
 
+/* --einde boeken persoonlijke gegevens--------------------------------------------------------------- */
 
 /* --einde boeken------------------------------------------------------------------------------------- */
+
 
 /* --nieuwsbrief---------------------------------------------------------------------------------------*/
 

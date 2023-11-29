@@ -9,6 +9,13 @@ body {
 
 /* --header-------------------------------------------------------------------------------------------- */
 
+.flexheader {
+    position:sticky;
+    top:0;
+    background-color:#fff;
+    min-height:70px;
+}
+
 h1 {
     font-size:40px;
 }
@@ -84,7 +91,6 @@ li {
   
   .nav-bar {
     display:flex;
-    min-height:70px;
     justify-content:space-between;
     align-items:center;
     padding:0 24px;
@@ -121,7 +127,7 @@ li {
     background-color:#006400;
   }
 
-@media (max-width:768px){
+@media (max-width:1000px){
     .hamburger {
         display:block;
     }
@@ -167,6 +173,11 @@ li {
     height:calc(100vh - 100px)
 }
 
+.frontimagesmallscreen {
+    display:flex;
+    width:100%;
+}
+
 .section1, .section2 {
     margin-top:80px;
 }
@@ -175,7 +186,7 @@ li {
     font-size:20px;
     text-align: center;
     padding:10px 10px 10px 10px;
-    margin:10px 350px 10px 350px;
+    margin:10px 20% 10px 20%;
     color:#006400;
 }
 
@@ -194,6 +205,33 @@ li {
     margin-left:auto;
     margin-right:auto;
 }
+
+
+@media (max-width:1000px) {
+
+    .frontimage {
+        display:none;
+    }
+
+    .beschrijving {
+        display:flex;
+        width:80%;
+    }
+
+    .section1 p, .section2 p {
+        margin:0 0 0 10%;
+    }
+
+}
+
+@media (min-width:1000px) {
+
+    .frontimagesmallscreen {
+        display:none;
+    }
+
+}
+    
 
 /* --nieuwsbrief----------------------------------------------------------------------------------------*/
 
