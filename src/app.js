@@ -18,7 +18,7 @@ function createMailOptions(klant) {
       from: 'aleksvansanten@gmail.com',
       to: klant.email,
       subject: 'Bevestiging van Reservering',
-      text: `Beste ${klant.naam},
+      text: `Beste ${klant.voornaam.tussenvoegsel.achternaam},
 
 Bedankt voor uw reservering! Hier zijn uw reserveringsgegevens:
 
