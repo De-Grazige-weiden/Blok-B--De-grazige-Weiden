@@ -2,3 +2,6 @@
 .secrets
 # database created by MySQL
 database
+
+data
+letsencrypt
