@@ -23,7 +23,7 @@
                     <div class="nav-item"><a class="navbarlink" href="#">Boeken</a></div>
                     <div class="nav-item"><a class="navbarlink" href="#">Plattegrond</a></div>
                     <div class="nav-item"><a class="navbarlink" href="#">Meer Info</a></div>
-                    </div>
+                </div>
 
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -51,19 +51,21 @@
                 <form class="vakantieform" action="" method="">
                     
                     <div class="formdiv1">
-                        <div><label>Verblijfssoort</label></div>
-                        <input type="" id="" name="" placeholder="kies verblijfssoort">
+                        <div><label for="Verblijfssoort">Verblijfssoort</label></div>
+                        <input type="" id="Verblijfssoort" name="Verblijfssoort" placeholder="kies verblijfssoort">
                     </div>
                     
                     <div class="formdiv2">
-                        <div><label>Aankomst en vertrek</label></div>
-                        <input type="" id="" name="" placeholder="kies aankomst/vertrek">
+                        <div><label for="Aankomstvertrekdatum">Aankomst/vertrek en datum</label></div>
+                        <input type="" id="Aankomstvertrekdatum" name="Aankomstvertrekdatum" placeholder="kies aankomst/vertrek">
                     </div>
                     
                     <div class="formdiv3">
-                        <div><label>Aantal personen</label></div>
-                        <input type="" id="" name="" placeholder="kies aantal personen">
+                        <div><label for="Aantalpersonen">Aantal personen</label></div>
+                        <input type="" id="Aantalpersonen" name="Aantalpersonen" placeholder="kies aantal personen">
                     </div>
+
+                    <input class="boekbutton1" type="submit" value="invoeren">
                     
                 </form>
             </div>
@@ -85,63 +87,45 @@
 
                 <form class="gegevensform" action="" method="">
 
-                <div class="formrij1">
-                    <div>
-                        <div><label>Voornaam</label></div>
-                        <input>
+                    <div class="gegevensformdiv">
+                        <div class="formrij1">
+                            <div>
+                                <div><label for="Voornaam">Voornaam</label></div>
+                                <input type="text" id="Voornaam" name="Voornaam" placeholder="Uw naam">
+                            </div>
+
+                            <div>
+                                <div><label for="Tussenvoegsel">Tussenvoegsel</label></div>
+                                <input type="text" id="Tussenvoegsel" name="Tussenvoegsel" placeholder="Een tussenvoegsel (optioneel)">
+                            </div>
+
+                            <div>
+                                <div><label for="Achternaam">Achternaam</label></div>
+                                <input type="text" id="Achternaam" name="Achternaam" placeholder="Uw achternaam">
+                            </div>
+
+                        </div>
+
+                        <div class="formrij2">
+
+                            <div>
+                                <div><label for="Telefoonnummer">Telefoonnummer</label></div>
+                                <input type="tel" id="Telefoonnummer" name="Telefoonnummer" placeholder="06-123-456-78">
+                            </div>
+
+                            <div>
+                                <div><label for="Emailadres">Emailadres</label></div>
+                                <input type="email" id="Emailadres" name="Emailadres" placeholder="Emailadres">
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <div><label>Tussenvoegsel</label></div>
-                        <input>
+                    <div class="submitbutton2">
+                        <input class="boekbutton2" type="submit" value="boeken ->">
                     </div>
-
-                    <div>
-                        <div><label>Achternaam</label></div>
-                        <input>
-                    </div>
-
-                    <div>
-                        <div><label>Postcode</label></div>
-                        <input>
-                    </div>
-
-                    <div>
-                        <div><label>Straat</label></div>
-                        <input>
-                    </div>
-                </div>
-
-                <div class="formrij2">
-                    <div>
-                        <div><label>Huisnummer</label></div>
-                        <input>
-                    </div>
-
-                    <div>
-                        <div><label>Plaats</label></div>
-                        <input>
-                    </div>
-
-                    <div>
-                        <div><label>Land</label></div>
-                        <input>
-                    </div>
-
-                    <div>
-                        <div><label>Telefoonnummer</label></div>
-                        <input>
-                    </div>
-
-                    <div>
-                        <div><label>Emailadres</label></div>
-                        <input>
-                    </div>
-                </div>
 
                 </form>
-
-                <p>Binnen een paar dagen na reserveren zult u een email ontvangen ter bevestiging van uw boeking</p>
+                <p>Binnen een paar uur na het reserveren zult u een email ontvangen ter bevestiging van uw boeking</p>
             </div>
         </section>
 

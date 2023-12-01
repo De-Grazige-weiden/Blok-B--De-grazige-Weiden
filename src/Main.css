@@ -64,7 +64,7 @@ h2 {
 
 .navbar a {
     position:relative;
-    font-size:30px;
+    font-size:20px;
     text-decoration:none;
     color:black;
     margin-left:40px
@@ -143,15 +143,19 @@ li {
     }
       
     .nav-menu {
+        display: flex;
+        align-items:flex-start;
         position:fixed;
         left: -100%;
-        top:140px;
+        top:110px;
         gap:0;
         flex-direction: column;
-        background-color:#006400;
-        width:100%;
+        background-color:#fff;
+        width:33%;
         text-align:center;
         transition: 0.3s;
+        border-radius:20px;
+        border:#000 2px solid;
     }
       
     .nav-item {
@@ -159,7 +163,7 @@ li {
     }
       
     .nav-menu.active {
-        left:0;
+        left:10px;
     }
 
 }
