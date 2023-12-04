@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-
 var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
@@ -53,7 +52,40 @@ app.listen(5500, function() {
   console.log('Server is running on port 5500');
 });
 
-app.get('/boekingen', )
+//----------------------------- RESTFUL API---------------------------------------------
 
+app.post('/klanten/boekingen/:id', (req, res) => {
+  const booking = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    postcode: req.body.postcode,
+    street: req.body.street,
+    houseNumber: req.body.houseNumber,
+    phoneNumber: req.body.phoneNumber,
+    email: req.body.email
+  };
+
+  const sql = 'INSERT INTO bookings SET ?';
+
+  db.query(sql, booking, (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+});
+
+
+
+
+
+
+
+
+app.get('/klanten/boekingen/:id', (req, res) => {
+res.send('hallo ik ben aleks');
+});
+
+app.patch('/klanten/boekingen/:id', (req, res) => {
+res.send('jo men');
+});
 
 

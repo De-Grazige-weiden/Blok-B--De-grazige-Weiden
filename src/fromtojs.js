@@ -15,4 +15,17 @@ document.getElementById('bevestigknop').addEventListener('submit', function(e) {
     },
     body: json
   });
+
+
+
+
+
+  
+  fetch('/klanten/boekingen/:id', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: json
+  })
 });
