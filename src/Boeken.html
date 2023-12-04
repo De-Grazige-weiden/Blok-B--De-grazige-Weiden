@@ -65,17 +65,22 @@
                     
                     <div class="formdiv3">
                         <div><label class="labeltitle" for="Aantalpersonen">Aantal personen</label></div>
-                        <input type="number" id="Aantalpersonen" name="Aantalpersonen" placeholder="1" min="1" max="8">
+                        <input type="number" id="Aantalpersonen" name="Aantalpersonen" value="1" min="1" max="8">
+                    </div>
+
+                    <div class="formdiv4">
+                        <div><label class="labeltitle" for="Voorkeur">Voorkeuren</label></div>
+                        <textarea type="text" id="Voorkeur" name="Voorkeur" placeholder="vul hier uw voorkeuren in"></textarea>
                     </div>
                     
                     <input class="boekbutton1" type="submit" value="invoeren">
 
                 </form>
             </div>
-            <div class="vakantieimage2"><img src="./img/pexels-pixabay-158179.jpg" width="100%"></div>
+            <!-- <div class="vakantieimage2"><img src="./img/pexels-pixabay-158179.jpg" width="100%"></div> -->
             </div>
 
-            <div class="vakantieimage1"><img src="./img/paul-hermann-XJuhZqEE4Go-unsplash.jpg" width="100%" height="95%"></div>
+            <div class="vakantieimage1"><img class="border-radius" src="./img/paul-hermann-XJuhZqEE4Go-unsplash.jpg" width="100%" height="95%"></div>
         </section>
 
 <!---------------------------------einde boeken niet persoonlijk-------------------------------------->
@@ -139,16 +144,17 @@
 
 <!-------------------------------------------nieuwsbrief---------------------------------------------->
 
-            <section class="nieuwsbrief">
-                    <p>Wilt u op de hoogte blijven van recente veranderingen en nieuws? Meld u dan nu aan voor de nieuwsbrief!</p>
-                <div class="nieuwsbriefbtncontainer">
-                    <form action="" method=""> 
-                        <label for="email"></label>
-                        <button class="aanmelden" type="submit">Aanmelden</button>
-                        <input type="email" id="email" name="email" placeholder="Vul hier uw emailadres in">
-                    </form>
-                </div>
-            </section>
+
+        <section class="nieuwsbrief">
+            <div class="nieuwsbriefbtncontainer">
+                <form class="formitems" action="" method=""> 
+                    <div><label>Wilt u op de hoogte blijven van recente veranderingen en nieuws? Meld u dan nu aan voor de nieuwsbrief!</label></div>
+                    <div><input type="email" id="email" name="email" placeholder="Vul hier uw emailadres in"></div>
+                    <div><button class="aanmelden" type="submit">Aanmelden</button></div>
+                </form>
+            </div>
+        </section>
+
 
 <!-----------------------------------------einde nieuwsbrief----------------------------------------->
         

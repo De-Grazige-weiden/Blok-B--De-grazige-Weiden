@@ -144,7 +144,7 @@ li {
         display: flex;
         align-items:flex-start;
         position:fixed;
-        left: -100%;
+        left: 100%;
         top:110px;
         gap:0;
         flex-direction: column;
@@ -161,7 +161,7 @@ li {
     }
       
     .nav-menu.active {
-        left:10px;
+        left:66%;
     }
 
 }
@@ -209,8 +209,9 @@ li {
 .vakantiegegevens {
     display:flex;
     flex-direction:column;
-    height:48%;
+    height:85%;
     background-color:#69B578;
+    border-radius:40px 0 0 0;
 }
 
 .vakantiegegevens h2 {
@@ -235,14 +236,23 @@ li {
     height:100%;
 }
 
-.vakantieimage2 {
+#Voorkeur {
+    padding:20px 200px 100px 20px;
+    width:100%;
+}
+
+.border-radius {
+    border-radius:0 40px 0 0;
+}
+
+/* .vakantieimage2 {
     display:flex;
     width:100%;
     height:37%;
     padding:4% 0 0 0;    
-}
+} */
 
-form label {
+.vakantieform label {
     display:flex;
     padding:20px 0 20px 0;
 }
@@ -279,6 +289,7 @@ form label {
     .vakantiegegevens {
         height:100%;
         width:100%;
+        border-radius:40px 40px 0 0;
     }
 
     .gegevensimage {
@@ -311,7 +322,7 @@ form label {
     background-color:#3A7D44;
     padding:50px 20px 50px 20px;
     margin:20px 0 20px 0;
-    border-radius:40px;
+    border-radius:0 0 40px 40px;
     width:98%;
 }
 
@@ -352,6 +363,11 @@ form label {
 
 .gegevensform input {
     border-radius:10px;
+}
+
+.gegevensform label {
+    display:flex;
+    padding:20px 0 20px 0;
 }
 
 .boeken p {    
@@ -421,38 +437,45 @@ form label {
 
 /* --einde boeken persoonlijke gegevens--------------------------------------------------------------- */
 
+.vakantieplek input, .boeken input {
+    padding:20px 200px 20px 20px;
+}
+
 /* --einde boeken------------------------------------------------------------------------------------- */
 
 
 /* --nieuwsbrief---------------------------------------------------------------------------------------*/
 
 .nieuwsbrief {
-    margin:200px 0 15px 50px;
+    display:flex;
+    text-align:center;
+    flex-direction:column;
+    margin:100px 0 15px 0px;
     text-align:left;
 }
 
-.nieuwsbrief p {
+.nieuwsbriefbtncontainer {
     display:flex;
-    justify-content:center;
+    flex-direction:column;
+    text-align:center;
 }
 
-form {
+.formitems {
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
 }
 
 .aanmelden {
-    display:flex;
     color:#fff;
     font-size:30px;
     background-color:#3A7D44;
     border-radius:40px;
-    margin:0 0 0 0;
     padding:10px 60px 10px 60px;
 }
 
-input {
-    padding:20px 200px 20px 50px;
+.formitems input {
+    padding:20px 200px 20px 20px;
+    margin:20px 0 10px 0;
 }
 
 /* --einde nieuwsbrief-------------------------------------------------------------------------------- */
