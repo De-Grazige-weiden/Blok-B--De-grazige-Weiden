@@ -352,11 +352,22 @@ footer {
 /* --einde footer------------------------------------------------------------------------------------- */
 
 #wijzigknop {
- border-radius: 5px;
- height: 50px;
- display: block;
- margin-left: 50px;
- font-size: medium;
+    border-radius: 5px;
+    height: 50px;
+    display: block;
+    margin-left: 50px;
+    font-size: medium;
+    background-color: white;
+    text-align: center;
+    padding: 15px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+#wijzigknop:hover {
+    color: green;
+    transition-duration: 0.7s;
 }
 
 #bevestigknop {
@@ -366,6 +377,15 @@ footer {
     margin-left: 50px;
     margin-bottom: 20px;
     font-size: medium;
-    width: 120.94px;
-    
+    width: 120.94px; 
+}
+
+#knop {
+    border-radius: 5px;
+    height: 50px;
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-size: medium;
+    width: 120.94px; 
 }
