@@ -70,3 +70,20 @@
 //
 //const port = process.env.PORT || 3000;
 //app.listen(port, () => console.log(`Listening on port ${port}...`))//
+
+
+
+//app.get('/klanten/boekingen/:id', (req, res) => {
+//    const klantId = req.params.id;
+//  
+//    const sql = 'SELECT * FROM bookings WHERE klantId = ?';
+//  
+//    db.query(sql, klantId, (err, result) => {
+//      if (err) {
+//        res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
+//        return;
+//      }
+//      res.json(result);
+//    });
+//  });
+//  

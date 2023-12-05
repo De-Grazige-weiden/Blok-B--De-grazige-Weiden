@@ -3,6 +3,24 @@ const app = express();
 app.use(express.json());
 var nodemailer = require('nodemailer');
 
+//--------------------database------------
+//var mysql = require('mysql');
+//
+//const db = mysql.createConnection ({
+//  user:"root",
+//  host: "localhost",
+//  password: "password",
+//  database: "",
+//});
+//
+//db.connect((err) => {
+//  if (err) {
+//    throw err;
+//  }
+//  console.log('Connected to database');
+//});
+
+//--------------------------Mail API-------------------
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -55,12 +73,16 @@ app.listen(5500, function() {
 //----------------------------- RESTFUL API---------------------------------------------
 
 app.post('/klanten/boekingen/:id', (req, res) => {
+  const klantId = req.params.id;
   const booking = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    postcode: req.body.postcode,
-    street: req.body.street,
-    houseNumber: req.body.houseNumber,
+    klantId: klantId,
+    verblijfssoort: req.body.verblijfssoort,
+    aankomstEnVertrek: req.body.aankomstEnVertrek,
+    aantalPersonen: req.body.aantalPersonen,
+    voorkeuren: req.body.voorkeuren,
+    voorNaam: req.body.voorNaam,
+    achterNaam: req.body.achterNaam,
+    tussenVoegsel: req.body.tussenVoegsel,
     phoneNumber: req.body.phoneNumber,
     email: req.body.email
   };
@@ -68,24 +90,15 @@ app.post('/klanten/boekingen/:id', (req, res) => {
   const sql = 'INSERT INTO bookings SET ?';
 
   db.query(sql, booking, (err, result) => {
-    if (err) throw err;
-    res.json(result);
+    if (err) {
+      res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
+      return;
+    }
+    res.send('<script>alert("Uw boeking is succesvol verwerkt!"); window.location.href="/";</script>');
   });
 });
 
 
-
-
-
-
-
-
-app.get('/klanten/boekingen/:id', (req, res) => {
-res.send('hallo ik ben aleks');
-});
-
 app.patch('/klanten/boekingen/:id', (req, res) => {
 res.send('jo men');
 });
-
-

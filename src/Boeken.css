@@ -350,3 +350,22 @@ footer {
 
 
 /* --einde footer------------------------------------------------------------------------------------- */
+
+#wijzigknop {
+ border-radius: 5px;
+ height: 50px;
+ display: block;
+ margin-left: 50px;
+ font-size: medium;
+}
+
+#bevestigknop {
+    border-radius: 5px;
+    height: 50px;
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-size: medium;
+    width: 120.94px;
+    
+}
