@@ -73,10 +73,10 @@ app.listen(5500, function() {
 //----------------------------- RESTFUL API---------------------------------------------
 
 //---------------------------BOEKING AANMAKEN EN VERSTUREN NAAR DB--------------------
-app.post('/klanten/boekingen/:id', (req, res) => {
-  const klantId = req.params.id;
+app.post('/klanten/boekingen/', (req, res) => {
+  //const klantId = req.params.id;
   const booking = {
-    klantId: klantId,
+    //klantId: klantId,
     verblijfssoort: req.body.verblijfssoort,
     aankomstEnVertrek: req.body.aankomstEnVertrek,
     aantalPersonen: req.body.aantalPersonen,

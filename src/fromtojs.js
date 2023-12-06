@@ -13,7 +13,7 @@ form.addEventListener('submit', event => {
 
   console.log(json);
 
-  fetch('/send-email', {
+  fetch('https://localhost:5500/send-email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ form.addEventListener('submit', event => {
     body: json
   });
 
-  fetch('/klanten/boekingen/:id', {
+  fetch('https://localhost:5500/klanten/boekingen/:id', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
