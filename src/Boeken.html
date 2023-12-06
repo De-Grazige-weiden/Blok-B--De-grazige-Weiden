@@ -21,7 +21,6 @@
                 <div class="nav-menu">
                     <div class="nav-item"><a class="navbarlink" href="index.html">Home</a></div>
                     <div class="nav-item"><a class="navbarlink" href="#">Boeken</a></div>
-                    <div class="nav-item"><a class="navbarlink" href="Plattegrond.html">Plattegrond</a></div>
                     <div class="nav-item"><a class="navbarlink" href="Meerinfo.html">Meer Info</a></div>
                 </div>
 
@@ -42,19 +41,18 @@
 
 <!--------------------------------------------boeken-------------------------------------------------->
 
-<!------------------------------------boeken niet persoonlijk----------------------------------------->
 
         <section class="vakantieplek">
             <div class="gegevensimage">
             <div class="vakantiegegevens">
-                <h2>Boek uw vakantie</h2>
+                <div class="formtitle1"><h2>Boek uw vakantie</h2></div>
                 <form class="vakantieform" action="" method="">
                     
                     <div class="formdiv1">
                         <label class="labeltitle" for="Verblijfssoort">Verblijfssoort</label>
                         <div class="radiocontainer"><input type="radio" id="Tent" name="Verblijfssoort" value="Tent"><label for="Tent">Tent</label></div>                      
-                        <div class="radiocontainer"><input type="radio" id="Camper/Caravan" name="Verblijfssoort" value="Camper/Caravan"><label for="Camper/Caravan">Camper/Caravan</label></div>
-                        <div class="radiocontainer"><input type="radio" id="Camper/Caravanentent" name="Verblijfssoort" value="Camper/Caravan en Tent"><label for="Camper/Caravanentent">Camper/Caravan en Tent</label></div>
+                        <div class="radiocontainer"><input type="radio" id="CamperofCaravan" name="Verblijfssoort" value="Camper/Caravan"><label for="CamperofCaravan">Camper/Caravan</label></div>
+                        <div class="radiocontainer"><input type="radio" id="CamperofCaravanentent" name="Verblijfssoort" value="Camper/Caravan en Tent"><label for="CamperofCaravanentent">Camper/Caravan en Tent</label></div>
                     </div>
                     
                     <div class="formdiv2">
@@ -72,34 +70,14 @@
                         <div><label class="labeltitle" for="Voorkeur">Voorkeuren</label></div>
                         <textarea type="text" id="Voorkeur" name="Voorkeur" placeholder="vul hier uw voorkeuren in"></textarea>
                     </div>
+
+                    <div class="formtitle2"><h2>Uw gegevens</h2></div>
                     
-                    <input class="boekbutton1" type="submit" value="invoeren">
-
-                </form>
-            </div>
-            <!-- <div class="vakantieimage2"><img src="./img/pexels-pixabay-158179.jpg" width="100%"></div> -->
-            </div>
-
-            <div class="vakantieimage1"><img class="border-radius" src="./img/paul-hermann-XJuhZqEE4Go-unsplash.jpg" width="100%" height="95%"></div>
-        </section>
-
-<!---------------------------------einde boeken niet persoonlijk-------------------------------------->
-
-<!---------------------------------------boeken persoonlijk------------------------------------------->
-
-        <section class="boeken">
-
-            <div class="persoonsgegevens">
-
-                <div class="formtitle"><h2>Uw gegevens</h2></div>
-
-                <form class="gegevensform" action="" method="">
-
                     <div class="gegevensformdiv">
                         <div class="formrij1">
                             <div>
                                 <div><label for="Voornaam">Voornaam</label></div>
-                                <input type="text" id="Voornaam" name="Voornaam" placeholder="Uw naam">
+                                <input type="text" id="Voornaam" name="Voornaam" placeholder="Uw naam" required>
                             </div>
 
                             <div>
@@ -109,7 +87,7 @@
 
                             <div>
                                 <div><label for="Achternaam">Achternaam</label></div>
-                                <input type="text" id="Achternaam" name="Achternaam" placeholder="Uw achternaam">
+                                <input type="text" id="Achternaam" name="Achternaam" placeholder="Uw achternaam" required>
                             </div>
 
                         </div>
@@ -118,26 +96,32 @@
 
                             <div>
                                 <div><label for="Telefoonnummer">Telefoonnummer</label></div>
-                                <input type="tel" id="Telefoonnummer" name="Telefoonnummer" placeholder="06-123-456-78" min="10" max="10" pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}" required>
+                                <input type="tel" id="Telefoonnummer" name="Telefoonnummer" pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{2}" placeholder="06-123-456-78" required>
                             </div>
 
                             <div>
                                 <div><label for="Emailadres">Emailadres</label></div>
-                                <input type="email" id="Emailadres" name="Emailadres" placeholder="Emailadres">
+                                <input type="email" id="Emailadres" name="Emailadres" placeholder="Emailadres" required>
                             </div>
                         </div>
                     </div>
 
-                    <div class="submitbutton2">
-                        <input class="boekbutton2" type="submit" value="boeken ->">
-                    </div>
+                    <input class="boekbutton1" type="submit" value="Boeken">
+
+                    <label>Binnen een paar uur na het reserveren zult u een email ontvangen ter bevestiging van uw boeking</label>
 
                 </form>
-                <p>Binnen een paar uur na het reserveren zult u een email ontvangen ter bevestiging van uw boeking</p>
+
+
+            
+            </div><!--i dont know why but i cant remove this without destroying the layout--></div>
+
+            <div class="vakantieimage1">
+                <img class="border-radius" src="./img/paul-hermann-XJuhZqEE4Go-unsplash.jpg" width="100%" height="95%">
+                <img src="./img/pexels-pixabay-158179.jpg" width="100%">
             </div>
         </section>
 
-<!-----------------------------------einde boeken persoonlijk----------------------------------------->
 
 <!------------------------------------------einde boeken---------------------------------------------->
 
@@ -163,8 +147,9 @@
 <!--------------------------------------------footer------------------------------------------------->
 
 <footer class="footer">
-    <h3>footer</h3>
-        <p>footercontent here</p>
+    <h3>Neem contact met ons op:</h3>
+        <p>06********</p>
+        <p>DeGroeneWeide@bert.nl</p>
 </footer>
 
 <!------------------------------------------einde footer--------------------------------------------->

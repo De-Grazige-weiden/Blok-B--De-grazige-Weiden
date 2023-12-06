@@ -214,11 +214,6 @@ li {
     border-radius:40px 0 0 0;
 }
 
-.vakantiegegevens h2 {
-    display:flex;
-    padding:10px 10px 0px 40px;
-}
-
 .vakantieform {
     display:flex;
     flex-direction:column;
@@ -232,7 +227,8 @@ li {
 
 .vakantieimage1 {
     display:flex;
-    width:48%;
+    flex-direction:column;
+    width:50%;
     height:100%;
 }
 
@@ -243,6 +239,7 @@ li {
 
 .border-radius {
     border-radius:0 40px 0 0;
+    margin:0 0 15px 0;
 }
 
 /* .vakantieimage2 {
@@ -326,35 +323,19 @@ li {
     width:98%;
 }
 
-.gegevensform {
-    display:flex;
-    flex-direction:column;
-
-    padding:0 0 0 20px;
-}
-
-.gegevensformdiv {
-    display:flex;
-    justify-content:center;
-}
 
 .submitbutton2 {
     display:flex;
     justify-content:center;
 }
 
-.formtitle {
-    text-align:center;
-
-    padding:20px;
+.formtitle1 {
+    display:flex;
+    padding:10px 10px 0px 40px;
 }
 
-.formrij1 {
-    padding:0 20px 0 0;
-}
-
-.formrij2 {
-    padding:0 0 0 20px;
+.formtitle2 {
+    padding:20px 0 20px 0;
 }
 
 .gegevensform label {
@@ -365,48 +346,10 @@ li {
     border-radius:10px;
 }
 
-.gegevensform label {
-    display:flex;
-    padding:20px 0 20px 0;
-}
-
-.boeken p {    
-    text-align:center;
-
-    font-size:20px;
-    padding:15px 0 0 20px;
-}
-
-.boeken .boekbutton2 { 
-    display:flex;
-    justify-content:center;
-
-    font-size:30px;
-    background-color:#D0DB97;
-    margin:100px 10px 10px 10px;
-    padding:12px 15px 12px 15px;
-    border:none;
-    border-radius:20px;
-    width:20%;
-}
-
-.boeken .boekbutton2:hover {
-    background-color:#ddf272;
-}
-
-.submit {
-    display:flex;
-    align-self:flex-end;
-}
 
 @media (max-width:1000px) {
     .boeken {
         margin:0 10px 0 10px;
-    }
-
-    .persoonsgegevens {
-        display:flex;
-        text-align:center;
     }
 
     .gegevensformdiv {
@@ -418,17 +361,6 @@ li {
         padding:0;
     }
 
-    .gegevensformdiv label {
-        display:flex;
-        justify-content:center;
-    }
-
-    .boeken .boekbutton2 {
-        display:flex;
-        
-        width:30%;
-        padding:12px 20px 12px 20px;
-    }
 }
 
 @media (min-width:1000px) {
@@ -437,7 +369,7 @@ li {
 
 /* --einde boeken persoonlijke gegevens--------------------------------------------------------------- */
 
-.vakantieplek input, .boeken input {
+#Tent, #CamperofCaravan, #CamperofCaravantent, #Aankomstdatum, #Vertrekdatum, #Aantalpersonen, #Voorkeur, #Voornaam, #Tussenvoegsel, #Achternaam, #Telefoonnummer, #Emailadres {
     padding:20px 200px 20px 20px;
 }
 
