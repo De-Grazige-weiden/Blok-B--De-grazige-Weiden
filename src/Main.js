@@ -1,5 +1,6 @@
 let hamburger
 let navMenu
+let txt
 
 window.addEventListener("DOMContentLoaded", function() {
     hamburger = document.querySelector(".hamburger");
@@ -19,4 +20,16 @@ function navButton_setup () {
         navMenu.classList.remove("active");
     }))
 }
+
+function nieuwsbriefFunction() {
+    if (confirm) {
+      txt = "U bent nu succesvol aangemeldt voor de nieuwsbrief! U kunt nu wekelijks email verwachten die u op de hoogte houdt van belangrijke veranderingen op camping de groene weide!";
+    } 
+    document.getElementById("nieuwsbriefpopup").innerHTML = txt;
+  }
+
+
+
+
+
 

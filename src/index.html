@@ -63,10 +63,11 @@
 
             <section class="nieuwsbrief">
                 <div class="nieuwsbriefbtncontainer">
-                    <form class="formitems" action="" method=""> 
+                    <form class="formitems" action="" method="" onsubmit="return false"> 
                         <div><label>Wilt u op de hoogte blijven van recente veranderingen en nieuws? Meld u dan nu aan voor de nieuwsbrief!</label></div>
                         <div><input type="email" id="email" name="email" placeholder="Vul hier uw emailadres in"></div>
-                        <div><button class="aanmelden" type="submit">Aanmelden</button></div>
+                        <div><button onclick="nieuwsbriefFunction()" class="aanmelden" type="submit">Aanmelden</button></div>
+                        <div><p id="nieuwsbriefpopup"></p></div>
                     </form>
                 </div>
             </section>
