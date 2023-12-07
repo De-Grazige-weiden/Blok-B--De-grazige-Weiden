@@ -1,9 +1,11 @@
 const express = require('express'); 
 const cors = require('cors'); 
 const app = express();  
-app.use(cors({ origin: 'http://127.0.0.1:5500' }));  
 app.use(express.json()); 
 var nodemailer = require('nodemailer');
+
+app.use(cors({ origin: 'http://127.0.0.1:5500' }));  
+
 
 
 //--------------------database------------
@@ -31,8 +33,8 @@ var transporter = nodemailer.createTransport({
     pass: 'ujwk mmsj pjvh sapf'
   }
 });
-function createMailOptions(klant) {
 
+function createMailOptions(klant) {
   return {
 
   from: 'aleksvansanten@gmail.com',
@@ -40,8 +42,8 @@ function createMailOptions(klant) {
   subject: 'Bevestiging van Reservering',
   text: 
   
- `Beste ${klant.voornaam},
- 
+  `Beste ${klant.voornaam},
+
   Bedankt voor uw reservering! Hier zijn uw reserveringsgegevens:
   
   Verblijfssoort: ${klant.verblijfssoort}
@@ -79,7 +81,7 @@ function createMailOptions(klant) {
 //----------------------------- RESTFUL API---------------------------------------------
 
 //---------------------------BOEKING AANMAKEN EN VERSTUREN NAAR DB--------------------
-app.post('/klanten/boekingen/', (req, res) => {
+app.post('/klanten/boekingen/:id', (req, res) => {
   //const klantId = req.params.id;
   const booking = {
     //klantId: klantId,
@@ -107,7 +109,7 @@ app.post('/klanten/boekingen/', (req, res) => {
 
 
 //--------------------------------------BOEKING WIJZIGEN EN STUREN NAAR DB----------------
-app.patch('/klanten/boekingen/:id', (req, res) => {
+app.patch('/klanten/boekingen/wijzigen/:id', (req, res) => {
   const klantId = req.params.id;
   const booking = {
     klantId: klantId,
