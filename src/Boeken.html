@@ -49,21 +49,21 @@
             <div class="vakantiegegevens">
                 <h2>Boek uw vakantie</h2>
                 
-                <form class="vakantieform">
+                <form class="vakantieform" id="vakantieform">
                     
                     <div class="formdiv1">
                         <div><label>Verblijfssoort</label></div>
-                        <input type="text" id="verblijfssoort" name="verblijfssoort" placeholder="kies verblijfssoort">
+                        <input type="text" id="verblijfssoort" name="verblijfssoort" placeholder="kies verblijfssoort" required>
                     </div>
                     
                     <div class="formdiv2">
                         <div><label>Aankomst en vertrek</label></div>
-                        <input type="text" id="reserveringsDatum" name="reserveringsDatum" placeholder="kies aankomst/vertrek">
+                        <input type="text" id="reserveringsDatum" name="reserveringsDatum" placeholder="kies aankomst/vertrek" required>
                     </div>
                     
                     <div class="formdiv3">
                         <div><label>Aantal personen</label></div>
-                        <input type="text" id="aantalPersonen" name="aantalPersonen" placeholder="kies aantal personen">
+                        <input type="text" id="aantalPersonen" name="aantalPersonen" placeholder="kies aantal personen" required>
                     </div>
                     
                 </form>
@@ -84,7 +84,7 @@
 
                 <div id="formtitle"><h2>Uw gegevens</h2></div>
 
-                <form class="gegevensform" action="" method="">
+                <form id="gegevensform" action="" method="">
 
                     <div class="formrij1">
                         <div>
@@ -136,7 +136,7 @@
                 
                         <div>
                             <div><label for="email">Emailadres</label></div>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" name="email" required>
                         </div>
                     </div>
                     <div>

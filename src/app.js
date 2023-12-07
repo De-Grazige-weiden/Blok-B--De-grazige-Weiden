@@ -1,7 +1,10 @@
-const express = require('express');
-const app = express();
-app.use(express.json());
+const express = require('express'); 
+const cors = require('cors'); 
+const app = express();  
+app.use(cors({ origin: 'http://127.0.0.1:5500' }));  
+app.use(express.json()); 
 var nodemailer = require('nodemailer');
+
 
 //--------------------database------------
 //var mysql = require('mysql');
@@ -28,33 +31,35 @@ var transporter = nodemailer.createTransport({
     pass: 'ujwk mmsj pjvh sapf'
   }
 });
-
 function createMailOptions(klant) {
+
   return {
-      from: 'aleksvansanten@gmail.com',
-      to: klant.email,
-      subject: 'Bevestiging van Reservering',
-      text: `Beste ${klant.voornaam},
 
-Bedankt voor uw reservering! Hier zijn uw reserveringsgegevens:
-
-Verblijfssoort: ${klant.verblijfssoort}
-Reserveringsdatum: ${klant.reserveringsDatum}
-Aantal personen: ${klant.aantalPersonen}
-
-We kijken ernaar uit u te verwelkomen!
-
-Met vriendelijke groet,
-
-Aleksander van Santen (Medewerker De Groene Weide)`
+  from: 'aleksvansanten@gmail.com',
+  to: klant.email,
+  subject: 'Bevestiging van Reservering',
+  text: 
+  
+ `Beste ${klant.voornaam},
+ 
+  Bedankt voor uw reservering! Hier zijn uw reserveringsgegevens:
+  
+  Verblijfssoort: ${klant.verblijfssoort}
+  Reserveringsdatum: ${klant.reserveringsDatum}
+  Aantal personen: ${klant.aantalPersonen}
+  
+  We kijken ernaar uit u te verwelkomen!
+  
+  Met vriendelijke groet,
+  
+  Aleksander van Santen (Medewerker De Groene Weide)`
   };
-}
-
-app.post('/send-email', function(req, res) {
-  let klant = req.body;
-
-  let mailOptions = createMailOptions(klant);
-
+ }
+ 
+ app.post('/send-email', function(req, res) {
+ 
+  let mailOptions = createMailOptions(req.body);
+ 
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
@@ -64,11 +69,12 @@ app.post('/send-email', function(req, res) {
       res.status(200).send('Email sent: ' + info.response);
     }
   });
-});
-
-app.listen(5500, function() {
+ });
+ 
+ app.listen(5500, function() {
   console.log('Server is running on port 5500');
-});
+ });
+
 
 //----------------------------- RESTFUL API---------------------------------------------
 

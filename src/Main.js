@@ -20,3 +20,8 @@ function navButton_setup () {
     }))
 }
 
+const mail = document.getElementById('bevestigknop');
+
+mail.addEventListener(click, function() {
+    alert("Uw boeking is voltooid!");
+})

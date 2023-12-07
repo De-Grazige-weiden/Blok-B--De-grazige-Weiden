@@ -1,53 +1,67 @@
 
-const form = document.getElementById('formtitle');
+const gegevensform = document.getElementById('gegevensform');
+const vakantieform = document.getElementById('vakantieform');
 
-form.addEventListener('submit', event => {
+gegevensform.addEventListener('submit', event => {
   event.preventDefault();
 
-  var formData = new FormData(form);
+  var gegevensformData = new FormData(gegevensform);
+  var vakantieformData = new FormData(vakantieform);
   var object = {};
-  formData.forEach(function(value, key){
+
+  gegevensformData.forEach(function (value, key) {
     object[key] = value;
+  });
+
+  vakantieformData.forEach(function (value, key) {
+    object[key] = value;
+    
   });
   var json = JSON.stringify(object);
 
   console.log(json);
 
-  fetch('https://localhost:5500/send-email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
+  const response = fetch("http://localhost:5500/send-email", {
+    method: "POST",
+    headers:
+    {
+      'Content-Type': 'application/json',
     },
-    body: json
+    body: json,
   });
 
-  fetch('https://localhost:5500/klanten/boekingen/:id', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: json
-  })
+
+//  fetch('/klanten/boekingen/:id', {
+//    method: 'POST',
+//    headers: {
+//      'Content-Type': 'application/json'
+//    },
+//    body: json
+//  })
 });
 
 
-form.addEventListener('submit', event => {
-  event.preventDefault();
 
-  var formData = new FormData(e.target);
-  var object = {};
-  formData.forEach(function(value, key){
-    object[key] = value;
-  });
-  var json = JSON.stringify(object);
 
-  console.log(json);
 
-  fetch('/klanten/boekingen/:id', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: json
-  })
-});
+
+//form.addEventListener('submit', event => {
+//  event.preventDefault();
+//
+//  var formData = new FormData(form);
+//  var object = {};
+//  formData.forEach(function(value, key){
+//    object[key] = value;
+//  });
+//  var json = JSON.stringify(object);
+//
+//  console.log(json);
+//
+//  fetch('/klanten/boekingen/:id', {
+//    method: 'POST',
+//    headers: {
+//      'Content-Type': 'application/json'
+//    },
+//    body: json
+//  })
+//});
