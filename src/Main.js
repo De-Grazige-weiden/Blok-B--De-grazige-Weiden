@@ -28,6 +28,13 @@ function nieuwsbriefFunction() {
     document.getElementById("nieuwsbriefpopup").innerHTML = txt;
   }
 
+function formSubmitFunction() {
+    if (confirm) {
+      txt = "Bedankt voor uw boeking, binnen een paar uur zult u een email ontvangen te bevestiging. Van gedachten veranderd? stuur dan gerust een mail naar '@' en we zullen uw boeking zo snel mogelijk voor u annuleren";
+    } 
+    document.getElementById("formpopup").innerHTML = txt;
+  }
+
 
 
 

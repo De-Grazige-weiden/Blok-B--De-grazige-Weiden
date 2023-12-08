@@ -46,7 +46,7 @@
             <div class="gegevensimage">
             <div class="vakantiegegevens">
                 <div class="formtitle1"><h2>Boek uw vakantie</h2></div>
-                <form class="vakantieform" action="" method="">
+                <form class="vakantieform" action="" method="" onsubmit="return false">
                     
                     <div class="formdiv1">
                         <label class="labeltitle" for="Verblijfssoort">Verblijfssoort</label>
@@ -106,9 +106,10 @@
                         </div>
                     </div>
 
-                    <input class="boekbutton1" type="submit" value="Boeken">
+                    <input onclick="formSubmitFunction()" class="boekbutton1" type="submit" value="Boeken">
 
                     <label>Binnen een paar uur na het reserveren zult u een email ontvangen ter bevestiging van uw boeking</label>
+                    <p id="formpopup"></p>
 
                 </form>
 
@@ -134,7 +135,7 @@
                 <form class="formitems" action="" method="" onsubmit="return false"> 
                     <div><label>Wilt u op de hoogte blijven van recente veranderingen en nieuws? Meld u dan nu aan voor de nieuwsbrief!</label></div>
                     <div><input type="email" id="email" name="email" placeholder="Vul hier uw emailadres in"></div>
-                    <div><button onclick="nieuwsbriefFuction()" class="aanmelden" type="submit">Aanmelden</button></div>
+                    <div><input onclick="nieuwsbriefFunction()" class="aanmelden" type="submit" value="Aanmelden"></div>
                     <div><p id="nieuwsbriefpopup"></p></div>
                 </form>
             </div>

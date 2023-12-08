@@ -226,9 +226,10 @@ header li {
 
 .aanmelden {
     color:#fff;
-    font-size:30px;
+    font-size:20px;
     background-color:#3A7D44;
     border-radius:40px;
+    border:#000 0px solid;
     padding:10px 60px 10px 60px;
 }
 
