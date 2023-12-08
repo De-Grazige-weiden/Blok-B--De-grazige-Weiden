@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 body {
@@ -7,7 +7,7 @@ body {
     margin:0px;
 }
 
-/* --header-------------------------------------------------------------------------------------------- */
+/* --navbar-------------------------------------------------------------------------------------------- */
 
 .flexheader {
     position:sticky;
@@ -33,7 +33,15 @@ h1 {
 }
 
 h2 {
-    font-family:cursive;
+    font-weight:10;
+    font-size:35px;
+    margin:50px 0 0 40px;
+}
+
+h3 {
+    font-weight:10;
+    font-size:25px;
+    margin:50px 0 0 40px;
 }
 
 .flexheader {
@@ -46,9 +54,6 @@ h2 {
     display:flex;
     padding:0 0 0 40px;
 }
-
-/* --navbar-------------------------------------------------------------------------------------------- */
-
 
 
 .navbar {
@@ -85,7 +90,7 @@ h2 {
     width:100%;
 }
 
-li {
+header li {
     list-style:none;
   }
   
@@ -143,97 +148,62 @@ li {
     }
       
     .nav-menu {
+        display: flex;
+        align-items:flex-start;
         position:fixed;
-        left: -100%;
-        top:140px;
+        left: 100%;
+        top:110px;
         gap:0;
         flex-direction: column;
-        background-color:#006400;
-        width:100%;
+        background-color:#fff;
+        width:33%;
         text-align:center;
         transition: 0.3s;
+        border:#000 2px solid;
+        border-radius:20px;
     }
       
     .nav-item {
-        margin: 16px 0;
+        margin: 14px 0 14px 0;
     }
       
     .nav-menu.active {
-        left:0;
+        left:66%;
     }
 
 }
 
 /* --einde navbar------------------------------------------------------------------------------------- */
-/* --einde header------------------------------------------------------------------------------------- */ 
 
-/* --main--------------------------------------------------------------------------------------------- */
+/* --main---------------------------------------------------------------------------------------------- */
 
-.frontimage {
-    height:calc(100vh - 100px)
+/* --directory----------------------------------------------------------------------------------------- */
+
+.pagedirectory a {
+    text-decoration:none;
+    color:black;
 }
 
-.frontimagesmallscreen {
-    display:flex;
-    width:100%;
+.pagedirectory a:hover {
+    text-decoration:underline;
 }
 
-.section1, .section2 {
-    margin-top:80px;
-}
+/* --plattegrond--------------------------------------------------------------------------------------- */
 
-.section1 p, .section2 p {
-    font-size:20px;
-    text-align: center;
-    padding:10px 10px 10px 10px;
-    margin:10px 20% 10px 20%;
-    color:#006400;
-}
-
-.section1 h2, .section2 h2 {
-    font-size:30px;
+.plattegrondcontainer {
     display:flex;
     justify-content:center;
 }
 
-.section1 img, .section2 img {
-    border-radius:30px;
+.imgplattegrond {
+    margin:100px 0 20px 0;
 }
 
-.center {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-}
+/* --eind plattegrond---------------------------------------------------------------------------------- */
 
+/* --einde directory----------------------------------------------------------------------------------- */
 
-@media (max-width:1000px) {
-
-    .frontimage {
-        display:none;
-    }
-
-    .beschrijving {
-        display:flex;
-        width:80%;
-    }
-
-    .section1 p, .section2 p {
-        margin:0 0 0 10%;
-    }
-
-}
-
-@media (min-width:1000px) {
-
-    .frontimagesmallscreen {
-        display:none;
-    }
-
-}
-    
-
-/* --nieuwsbrief----------------------------------------------------------------------------------------*/
+/* --nieuwsbrief--------------------------------------------------------------------------------------- */
 
 .nieuwsbrief {
     display:flex;
@@ -273,7 +243,6 @@ li {
 
 /* --einde main--------------------------------------------------------------------------------------- */
 
-
 /* --footer------------------------------------------------------------------------------------------- */
 
 footer {
@@ -287,4 +256,3 @@ footer {
 
 
 /* --einde footer------------------------------------------------------------------------------------- */
-
