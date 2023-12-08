@@ -30,7 +30,6 @@ gegevensform.addEventListener('submit', event => {
     body: json,
   });
 
-
   const antwoord = fetch("http://localhost:5500/klanten/boekingen/:id", {
     method: 'POST',
     headers: {
