@@ -34,7 +34,14 @@ h1 {
 
 h2 {
     font-weight:10;
-    font-size:30px;
+    font-size:35px;
+    margin:50px 0 0 40px;
+}
+
+h3 {
+    font-weight:10;
+    font-size:25px;
+    margin:50px 0 0 40px;
 }
 
 .flexheader {
@@ -83,7 +90,7 @@ h2 {
     width:100%;
 }
 
-li {
+header li {
     list-style:none;
   }
   
@@ -170,6 +177,32 @@ li {
 
 /* --main---------------------------------------------------------------------------------------------- */
 
+/* --directory----------------------------------------------------------------------------------------- */
+
+.pagedirectory a {
+    text-decoration:none;
+    color:black;
+}
+
+.pagedirectory a:hover {
+    text-decoration:underline;
+}
+
+/* --plattegrond--------------------------------------------------------------------------------------- */
+
+.plattegrondcontainer {
+    display:flex;
+    justify-content:center;
+}
+
+.imgplattegrond {
+    margin:100px 0 20px 0;
+}
+
+/* --eind plattegrond---------------------------------------------------------------------------------- */
+
+/* --einde directory----------------------------------------------------------------------------------- */
+
 /* --nieuwsbrief--------------------------------------------------------------------------------------- */
 
 .nieuwsbrief {
@@ -193,9 +226,10 @@ li {
 
 .aanmelden {
     color:#fff;
-    font-size:30px;
+    font-size:20px;
     background-color:#3A7D44;
     border-radius:40px;
+    border:#000 0px solid;
     padding:10px 60px 10px 60px;
 }
 
