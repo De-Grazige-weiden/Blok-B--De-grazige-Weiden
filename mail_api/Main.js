@@ -1,5 +1,6 @@
 let hamburger
 let navMenu
+let txt
 
 window.addEventListener("DOMContentLoaded", function() {
     hamburger = document.querySelector(".hamburger");
@@ -20,8 +21,22 @@ function navButton_setup () {
     }))
 }
 
-const mail = document.getElementById('bevestigknop');
+function nieuwsbriefFunction() {
+    if (confirm) {
+      txt = "U bent nu succesvol aangemeldt voor de nieuwsbrief! U kunt nu wekelijks email verwachten die u op de hoogte houdt van belangrijke veranderingen op camping de groene weide!";
+    } 
+    document.getElementById("nieuwsbriefpopup").innerHTML = txt;
+  }
 
-mail.addEventListener('click', function() {
-    alert("Uw boeking is voltooid!");
-});
+function formSubmitFunction() {
+    if (confirm) {
+      txt = "Bedankt voor uw boeking, binnen een paar uur zult u een email ontvangen te bevestiging. Van gedachten veranderd? stuur dan gerust een mail naar '@' en we zullen uw boeking zo snel mogelijk voor u annuleren";
+    } 
+    document.getElementById("formpopup").innerHTML = txt;
+  }
+
+
+
+
+
+

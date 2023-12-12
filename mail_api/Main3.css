@@ -9,13 +9,6 @@ body {
 
 /* --header-------------------------------------------------------------------------------------------- */
 
-.flexheader {
-    position:sticky;
-    top:0;
-    background-color:#fff;
-    min-height:70px;
-}
-
 h1 {
     font-size:40px;
 }
@@ -64,7 +57,7 @@ h2 {
 
 .navbar a {
     position:relative;
-    font-size:20px;
+    font-size:30px;
     text-decoration:none;
     color:black;
     margin-left:40px
@@ -91,6 +84,7 @@ li {
   
   .nav-bar {
     display:flex;
+    min-height:70px;
     justify-content:space-between;
     align-items:center;
     padding:0 24px;
@@ -127,7 +121,7 @@ li {
     background-color:#006400;
   }
 
-@media (max-width:1000px){
+@media (max-width:768px){
     .hamburger {
         display:block;
     }
@@ -173,11 +167,6 @@ li {
     height:calc(100vh - 100px)
 }
 
-.frontimagesmallscreen {
-    display:flex;
-    width:100%;
-}
-
 .section1, .section2 {
     margin-top:80px;
 }
@@ -186,7 +175,7 @@ li {
     font-size:20px;
     text-align: center;
     padding:10px 10px 10px 10px;
-    margin:10px 20% 10px 20%;
+    margin:10px 350px 10px 350px;
     color:#006400;
 }
 
@@ -206,68 +195,31 @@ li {
     margin-right:auto;
 }
 
-
-@media (max-width:1000px) {
-
-    .frontimage {
-        display:none;
-    }
-
-    .beschrijving {
-        display:flex;
-        width:80%;
-    }
-
-    .section1 p, .section2 p {
-        margin:0 0 0 10%;
-    }
-
-}
-
-@media (min-width:1000px) {
-
-    .frontimagesmallscreen {
-        display:none;
-    }
-
-}
-    
-
 /* --nieuwsbrief----------------------------------------------------------------------------------------*/
 
 .nieuwsbrief {
-    display:flex;
-    text-align:center;
-    flex-direction:column;
-    margin:100px 0 15px 0px;
+    margin:200px 0 15px 50px;
     text-align:left;
 }
 
-.nieuwsbriefbtncontainer {
+form {
     display:flex;
-    flex-direction:column;
-    text-align:center;
-}
-
-.formitems {
-    display:flex;
-    flex-direction:column;
+    flex-direction:row;
 }
 
 .aanmelden {
+    display:flex;
     color:#fff;
-    font-size:20px;
+    font-size:30px;
     background-color:#3A7D44;
     border-radius:40px;
-    border:#000 0px solid;
+    margin:0 0 0 0;
     padding:10px 60px 10px 60px;
 }
 
-.formitems input {
-    padding:20px 200px 20px 20px;
-    margin:20px 0 10px 0;
+input {
+    padding:20px 200px 20px 50px;
 }
-
 
 /* --einde nieuwsbrief-------------------------------------------------------------------------------- */
 

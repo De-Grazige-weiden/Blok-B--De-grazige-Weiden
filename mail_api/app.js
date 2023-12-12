@@ -46,12 +46,13 @@ function createMailOptions(klant) {
   subject: 'Bevestiging van Reservering',
   text: 
   
-  `Beste ${klant.voornaam},
+  `Beste ${klant.voorNaam},
 
   Bedankt voor uw reservering! Hier zijn uw reserveringsgegevens:
   
   Verblijfssoort: ${klant.verblijfssoort}
-  Reserveringsdatum: ${klant.reserveringsDatum}
+  Aankomstdatum: ${klant.aankomstDatum}
+  Vertrekdatum: ${klant.vertrekDatum}
   Aantal personen: ${klant.aantalPersonen}
   
   We kijken ernaar uit u te verwelkomen!
@@ -89,20 +90,21 @@ app.post('/klanten/boekingen/:id', (req, res) => {
   //const klantId = req.params.id;
   const postData = {
     verblijfssoort: req.body.verblijfssoort || null,
-    aankomstEnVertrek: req.body.aankomstEnVertrek || null,
+    aankomstDatum: req.body.aankomstDatum || null,
+    vertrekDatum: req.body.vertrekDatum || null,
     aantalPersonen: req.body.aantalPersonen || null,
     voorkeuren: req.body.voorkeuren || null,
     voorNaam: req.body.voorNaam || null,
     achterNaam: req.body.achterNaam || null,
     tussenVoegsel: req.body.tussenVoegsel || null,
-    phoneNumber: req.body.phoneNumber || null,
+    phoneNumber: req.body.telefoonNummer || null,
     email: req.body.email || null
   };
   
   
-  var values = [postData.verblijfssoort, postData.aankomstEnVertrek, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.phoneNumber, postData.email];
+  var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.phoneNumber, postData.email];
  
-  var sql = 'INSERT INTO boeking (verblijfssoort, aankomstenvertrek, aantalpersonen, voorkeuren, voornaam, achternaam, tussenvoegsel, phonenumber, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  var sql = 'INSERT INTO boeking (verblijfssoort, aankomstdatum, vertrekdatum, aantalpersonen, voorkeuren, voornaam, achternaam, tussenvoegsel, phonenumber, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
   
   db.query(sql, values, (err, result) => {
     if (err) {
@@ -116,28 +118,28 @@ app.post('/klanten/boekingen/:id', (req, res) => {
 
 
 //--------------------------------------BOEKING WIJZIGEN EN STUREN NAAR DB----------------
-app.patch('/klanten/boekingen/wijzigen/:id', (req, res) => {
-  const klantId = req.params.id;
-  const booking = {
-    klantId: klantId,
-    verblijfssoort: req.body.verblijfssoort,
-    aankomstEnVertrek: req.body.aankomstEnVertrek,
-    aantalPersonen: req.body.aantalPersonen,
-    voorkeuren: req.body.voorkeuren,
-    voorNaam: req.body.voorNaam,
-    achterNaam: req.body.achterNaam,
-    tussenVoegsel: req.body.tussenVoegsel,
-    phoneNumber: req.body.phoneNumber,
-    email: req.body.email
-  };
-
-  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstEnVertrek = ?, aantalPersonen = ?, voorkeuren = ?, voorNaam = ?, achterNaam = ?, tussenVoegsel = ?, phoneNumber = ?, email = ? WHERE klantId = ?';
-
-  db.query(sql, [booking.verblijfssoort, booking.aankomstEnVertrek, booking.aantalPersonen, booking.voorkeuren, booking.voorNaam, booking.achterNaam, booking.tussenVoegsel, booking.phoneNumber, booking.email, klantId], (err, result) => {
-    if (err) {
-      res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
-      return;
-    }
-    res.send('<script>alert("Uw boeking is succesvol gewijzigd!"); window.location.href="/";</script>');
-  });
-});
+//app.patch('/klanten/boekingen/wijzigen/:id', (req, res) => {
+//  const klantId = req.params.id;
+//  const postData = {
+//    verblijfssoort: req.body.verblijfssoort || null,
+//    aankomstDatum: req.body.aankomstDatum || null,
+//    vertrekDatum: req.body.vertrekDatum || null,
+//    aantalPersonen: req.body.aantalPersonen || null,
+//    voorkeuren: req.body.voorkeuren || null,
+//    voorNaam: req.body.voorNaam || null,
+//    achterNaam: req.body.achterNaam || null,
+//    tussenVoegsel: req.body.tussenVoegsel || null,
+//    phoneNumber: req.body.telefoonNummer || null,
+//    email: req.body.email || null
+//  };
+//
+//  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstEnVertrek = ?, aantalPersonen = ?, voorkeuren = ?, voorNaam = ?, achterNaam = ?, tussenVoegsel = ?, phoneNumber = ?, email = ? WHERE klantId = ?';
+//
+//  db.query(sql, [booking.verblijfssoort, booking.aankomstEnVertrek, booking.aantalPersonen, booking.voorkeuren, booking.voorNaam, booking.achterNaam, booking.tussenVoegsel, booking.phoneNumber, booking.email, klantId], (err, result) => {
+//    if (err) {
+//      res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
+//      return;
+//    }
+//    res.send('<script>alert("Uw boeking is succesvol gewijzigd!"); window.location.href="/";</script>');
+//  });
+//});
