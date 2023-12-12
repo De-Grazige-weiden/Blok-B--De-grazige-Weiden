@@ -54,6 +54,7 @@ function createMailOptions(klant) {
   Aankomstdatum: ${klant.aankomstDatum}
   Vertrekdatum: ${klant.vertrekDatum}
   Aantal personen: ${klant.aantalPersonen}
+  Voorkeuren: ${klant.voorkeuren}
   
   We kijken ernaar uit u te verwelkomen!
   
@@ -102,7 +103,7 @@ app.post('/klanten/boekingen/:id', (req, res) => {
   };
   
   
-  var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.phoneNumber, postData.email];
+  var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.telefoonNummer, postData.email];
  
   var sql = 'INSERT INTO boeking (verblijfssoort, aankomstdatum, vertrekdatum, aantalpersonen, voorkeuren, voornaam, achternaam, tussenvoegsel, phonenumber, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
   
