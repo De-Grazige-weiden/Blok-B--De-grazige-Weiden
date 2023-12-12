@@ -98,14 +98,13 @@ app.post('/klanten/boekingen/:id', (req, res) => {
     voorNaam: req.body.voorNaam || null,
     achterNaam: req.body.achterNaam || null,
     tussenVoegsel: req.body.tussenVoegsel || null,
-    phoneNumber: req.body.telefoonNummer || null,
+    telefoonNummer: req.body.telefoonNummer || null,
     email: req.body.email || null
   };
   
-  
   var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.telefoonNummer, postData.email];
  
-  var sql = 'INSERT INTO boeking (verblijfssoort, aankomstdatum, vertrekdatum, aantalpersonen, voorkeuren, voornaam, achternaam, tussenvoegsel, phonenumber, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  var sql = 'INSERT INTO boeking (verblijfssoort, aankomstdatum, vertrekdatum, aantalpersonen, voorkeuren, voornaam, achternaam, tussenvoegsel, telefoonnummer, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
   
   db.query(sql, values, (err, result) => {
     if (err) {
