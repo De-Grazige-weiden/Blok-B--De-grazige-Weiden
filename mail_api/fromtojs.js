@@ -1,6 +1,6 @@
 
 //---------------------------VERZOEK VOOR MAIL EN BOEKING AANMAKEN-----------------
-const vakantieform = document.getElementById('vakantieform');
+const vakantieform = document.getElementById('vakantieform')
 
 vakantieform.addEventListener('submit', event => {
   event.preventDefault();
