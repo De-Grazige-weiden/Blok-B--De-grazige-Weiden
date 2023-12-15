@@ -346,6 +346,16 @@ li {
     border-radius:10px;
 }
 
+.bevestigknop {
+    padding: 20px 20px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    margin-top: 25px;
+    font-size: 20px;
+    width: 115px;
+}
+
 
 @media (max-width:1000px) {
     .boeken {
