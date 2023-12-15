@@ -87,7 +87,7 @@ function createMailOptions(klant) {
 //----------------------------- RESTFUL API---------------------------------------------
 
 //---------------------------BOEKING AANMAKEN EN VERSTUREN NAAR DB--------------------
-app.post('/klanten/boekingen/:id', (req, res) => {
+app.post('/klanten/boekingen', (req, res) => {
   //const klantId = req.params.id;
   const postData = {
     verblijfssoort: req.body.verblijfssoort || null,

@@ -25,7 +25,7 @@ const vakantieform = document.getElementById('vakantieform')
     body: json,
   });
 
-  const antwoord = fetch("http://localhost:5500/klanten/boekingen/:id", {
+  const antwoord = fetch("http://localhost:5500/klanten/boekingen", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
