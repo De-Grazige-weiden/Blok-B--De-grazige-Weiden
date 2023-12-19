@@ -144,7 +144,7 @@ li {
         display: flex;
         align-items:flex-start;
         position:fixed;
-        left: 100%;
+        left: -100%;
         top:110px;
         gap:0;
         flex-direction: column;
@@ -161,7 +161,7 @@ li {
     }
       
     .nav-menu.active {
-        left:66%;
+        left:10px;
     }
 
 }
@@ -209,9 +209,13 @@ li {
 .vakantiegegevens {
     display:flex;
     flex-direction:column;
-    height:85%;
+    height:48%;
     background-color:#69B578;
-    border-radius:40px 0 0 0;
+}
+
+.vakantiegegevens h2 {
+    display:flex;
+    padding:10px 10px 10px 40px;
 }
 
 .vakantieform {
@@ -261,7 +265,8 @@ li {
 .boekbutton1 {
     display:flex;
     justify-content:center;
-    background-color:#D0DB97;
+    color:#fff;
+    background-color:#3F7CAC;
     font-size:20px;
     border:none;
     border-radius:20px;
@@ -271,7 +276,7 @@ li {
 }
 
 .boekbutton1:hover {
-    background-color:#ddf272;
+    background-color:#0D3B66;
 }
 
 @media (max-width:1000px){
@@ -296,7 +301,6 @@ li {
 
     .boekbutton1 {
         display:flex;
-        
         width:30%;
         padding:12px 20px 12px 20px;
     }
@@ -312,25 +316,12 @@ li {
     justify-content:center;
 }
 
-.persoonsgegevens {
-    display:flex;
-    flex-direction:column;
-
-    background-color:#3A7D44;
-    padding:50px 20px 50px 20px;
-    margin:20px 0 20px 0;
-    border-radius:0 0 40px 40px;
-    width:98%;
-}
-
-
 .submitbutton2 {
     display:flex;
     justify-content:center;
 }
 
 .formtitle1 {
-    display:flex;
     padding:10px 10px 0px 40px;
 }
 
@@ -363,10 +354,6 @@ li {
 
 }
 
-@media (min-width:1000px) {
-
-}
-
 /* --einde boeken persoonlijke gegevens--------------------------------------------------------------- */
 
 #Tent, #CamperofCaravan, #CamperofCaravantent, #Aankomstdatum, #Vertrekdatum, #Aantalpersonen, #Voorkeur, #Voornaam, #Tussenvoegsel, #Achternaam, #Telefoonnummer, #Emailadres {
@@ -382,7 +369,7 @@ li {
     display:flex;
     text-align:center;
     flex-direction:column;
-    margin:100px 0 15px 0px;
+    margin:0px 0 15px 0px;
     text-align:left;
 }
 
@@ -398,13 +385,17 @@ li {
 }
 
 .aanmelden {
-    text-align:center;
     color:#fff;
     font-size:20px;
-    background-color:#3A7D44;
+    background-color:#3F7CAC;
     border-radius:40px;
     border:#000 0px solid;
     padding:10px 60px 10px 60px;
+}
+.aanmelden 
+
+.aanmelden:hover {
+    background-color:#0D3B66;
 }
 
 .formitems input {
@@ -423,8 +414,7 @@ footer {
     align-items: center;
     flex-direction: column;
     justify-content:center;   
-    background-color:#69B578;
-    opacity:70%;
+    background-color:#209f33;
 }
 
 
