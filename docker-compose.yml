@@ -29,7 +29,7 @@ services:
     restart: unless-stopped
     # the src folder is mapped to wwww/html on the inside. This will allow apache to see what I edit in ./src
     volumes:
-      - ./guest_site:/var/www/html
+      - ./guest_website:/var/www/html
     # Depends on db to start first
     depends_on:
       - db
@@ -42,7 +42,7 @@ services:
     restart: unless-stopped
     # the src folder is mapped to wwww/html on the inside. This will allow apache to see what I edit in ./src
     volumes:
-      - ./admin_site:/var/www/html
+      - ./admin_website:/var/www/html
     # Depends on db to start first
     depends_on:
       - db
