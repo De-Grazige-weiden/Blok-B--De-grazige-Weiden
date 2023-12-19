@@ -1,5 +1,5 @@
 * {
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -7,14 +7,7 @@ body {
     margin:0px;
 }
 
-/* --navbar-------------------------------------------------------------------------------------------- */
-
-.flexheader {
-    position:sticky;
-    top:0;
-    background-color:#fff;
-    min-height:70px;
-}
+/* --header-------------------------------------------------------------------------------------------- */
 
 h1 {
     font-size:40px;
@@ -33,15 +26,7 @@ h1 {
 }
 
 h2 {
-    font-weight:10;
-    font-size:30px;
-    margin:40px 0 0 40px;
-}
-
-h3 {
-    font-weight:10;
-    font-size:25px;
-    margin:50px 0 0 40px;
+    font-family:cursive;
 }
 
 .flexheader {
@@ -54,6 +39,9 @@ h3 {
     display:flex;
     padding:0 0 0 40px;
 }
+
+/* --navbar-------------------------------------------------------------------------------------------- */
+
 
 
 .navbar {
@@ -69,7 +57,7 @@ h3 {
 
 .navbar a {
     position:relative;
-    font-size:20px;
+    font-size:30px;
     text-decoration:none;
     color:black;
     margin-left:40px
@@ -90,12 +78,13 @@ h3 {
     width:100%;
 }
 
-header li {
+li {
     list-style:none;
   }
   
   .nav-bar {
     display:flex;
+    min-height:70px;
     justify-content:space-between;
     align-items:center;
     padding:0 24px;
@@ -132,7 +121,7 @@ header li {
     background-color:#006400;
   }
 
-@media (max-width:1000px){
+@media (max-width:768px){
     .hamburger {
         display:block;
     }
@@ -148,144 +137,94 @@ header li {
     }
       
     .nav-menu {
-        display: flex;
-        align-items:flex-start;
         position:fixed;
-        left: 100%;
-        top:110px;
+        left: -100%;
+        top:140px;
         gap:0;
         flex-direction: column;
-        background-color:#fff;
-        width:33%;
+        background-color:#006400;
+        width:100%;
         text-align:center;
         transition: 0.3s;
-        border:#000 2px solid;
-        border-radius:20px;
     }
       
     .nav-item {
-        margin: 14px 0 14px 0;
+        margin: 16px 0;
     }
       
     .nav-menu.active {
-        left:66%;
+        left:0;
     }
 
 }
 
 /* --einde navbar------------------------------------------------------------------------------------- */
+/* --einde header------------------------------------------------------------------------------------- */ 
 
-/* --main---------------------------------------------------------------------------------------------- */
+/* --main--------------------------------------------------------------------------------------------- */
 
-/* --directory----------------------------------------------------------------------------------------- */
-
-.pagedirectory a {
-    text-decoration:none;
-    color:black;
+.frontimage {
+    height:calc(100vh - 100px)
 }
 
-.pagedirectory a:hover {
-    text-decoration:underline;
+.section1, .section2 {
+    margin-top:80px;
 }
 
-/* --einde directory----------------------------------------------------------------------------------- */
+.section1 p, .section2 p {
+    font-size:20px;
+    text-align: center;
+    padding:10px 10px 10px 10px;
+    margin:10px 350px 10px 350px;
+    color:#006400;
+}
 
-.pagedirectory {
+.section1 h2, .section2 h2 {
+    font-size:30px;
     display:flex;
-    flex-direction: column;
-    background:#3db64f;
-    margin:40px 10px 0px 10px;
-    border-radius:40px 40px 0px 0px;
+    justify-content:center;
 }
 
-.Duurzaamheid {
-    display:flex;
-    background:#3db64f;
-    margin:0px 10px 0px 10px;
+.section1 img, .section2 img {
+    border-radius:30px;
 }
 
-.Omgeving {
-    display:flex;
-    background:#3db64f;
-    margin:0px 10px 0px 10px;
+.center {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.Activiteiten {
-    display:flex;
-    background:#3db64f;
-    margin:0px 10px 0px 10px;
-}
-
-.Boeking_annuleren {
-    display:flex;
-    background:#3db64f;
-    margin:0px 10px 0px 10px;
-}
-
-/* --plattegrond--------------------------------------------------------------------------------------- */
-
-.Plattegrond {
-    display:flex;
-    background:#3db64f;
-    margin:0px 10px 0px 10px;
-    border-radius:0px 0px 40px 40px;
-}
-
-.plattegrondcontainer {
-    display:flex;
-    flex-direction: column;
-    width:70%;
-}
-
-.imgplattegrond {
-    margin:50px 0px 50px 40px;
-}
-
-/* --eind plattegrond---------------------------------------------------------------------------------- */
-
-/* --nieuwsbrief--------------------------------------------------------------------------------------- */
+/* --nieuwsbrief----------------------------------------------------------------------------------------*/
 
 .nieuwsbrief {
-    display:flex;
-    text-align:center;
-    flex-direction:column;
-    margin:100px 0 15px 0px;
+    margin:200px 0 15px 50px;
     text-align:left;
 }
 
-.nieuwsbriefbtncontainer {
+form {
     display:flex;
-    flex-direction:column;
-    text-align:center;
-}
-
-.formitems {
-    display:flex;
-    flex-direction:column;
+    flex-direction:row;
 }
 
 .aanmelden {
+    display:flex;
     color:#fff;
-    font-size:20px;
-    background-color:#3F7CAC;
+    font-size:30px;
+    background-color:#3A7D44;
     border-radius:40px;
-    border:#000 0px solid;
+    margin:0 0 0 0;
     padding:10px 60px 10px 60px;
 }
 
-.aanmelden:hover {
-    background-color:#0D3B66;
+input {
+    padding:20px 200px 20px 50px;
 }
-
-.formitems input {
-    padding:20px 200px 20px 20px;
-    margin:20px 0 10px 0;
-}
-
 
 /* --einde nieuwsbrief-------------------------------------------------------------------------------- */
 
 /* --einde main--------------------------------------------------------------------------------------- */
+
 
 /* --footer------------------------------------------------------------------------------------------- */
 
@@ -294,8 +233,10 @@ footer {
     align-items: center;
     flex-direction: column;
     justify-content:center;   
-    background-color:#209f33;
+    background-color:#69B578;
+    opacity:70%;
 }
 
 
 /* --einde footer------------------------------------------------------------------------------------- */
+

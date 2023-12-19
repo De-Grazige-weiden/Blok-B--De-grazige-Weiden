@@ -1,0 +1,99 @@
+
+//---------------------------VERZOEK VOOR MAIL EN BOEKING AANMAKEN-----------------
+const vakantieform = document.getElementById('vakantieform')
+
+  vakantieform.addEventListener('submit', event => {
+  event.preventDefault();
+
+  var vakantieformData = new FormData(vakantieform);
+  var object = {};
+
+  vakantieformData.forEach(function (value, key) {
+    object[key] = value;
+  });
+  
+  var json = JSON.stringify(object);
+
+  console.log(json);
+
+  const response = fetch("http://localhost:5500/send-email", {
+    method: "POST",
+    headers:
+    {
+      'Content-Type': 'application/json',
+    },
+    body: json,
+  });
+
+  const antwoord = fetch("http://localhost:5500/klanten/boekingen", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: json
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------OUDE boeking maken----------------
+
+
+//---------------------------VERZOEK VOOR MAIL EN BOEKING AANMAKEN-----------------
+//const gegevensform = document.getElementById('gegevensform');
+//const vakantieform = document.getElementById('vakantieform');
+//
+//gegevensform.addEventListener('submit', event => {
+//  event.preventDefault();
+//
+//  var gegevensformData = new FormData(gegevensform);
+//  var vakantieformData = new FormData(vakantieform);
+//  var object = {};
+//
+//  gegevensformData.forEach(function (value, key) {
+//    object[key] = value;
+//  });
+//
+//  vakantieformData.forEach(function (value, key) {
+//    object[key] = value;
+//    
+//  });
+//  var json = JSON.stringify(object);
+//
+//  console.log(json);
+//
+//  const response = fetch("http://localhost:5500/send-email", {
+//    method: "POST",
+//    headers:
+//    {
+//      'Content-Type': 'application/json',
+//    },
+//    body: json,
+//  });
+//
+//  const antwoord = fetch("http://localhost:5500/klanten/boekingen/:id", {
+//    method: 'POST',
+//    headers: {
+//      'Content-Type': 'application/json'
+//    },
+//    body: json
+//
+//  });
+//});
