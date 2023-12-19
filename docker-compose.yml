@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
 
-  guest_site:
+  guest_website:
     # The Apache image is build using the dockerfile
     build: .
     restart: unless-stopped
@@ -36,7 +36,7 @@ services:
     secrets:
       - MYSQL_ROOT_PASSWORD_FILE
 
-  admin_site:
+  admin_website:
     # The Apache image is build using the dockerfile
     build: .
     restart: unless-stopped
