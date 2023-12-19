@@ -39,6 +39,29 @@
 
     <main>
 
+<!-------------------------------------------prijzen-------------------------------------------------->
+
+        <section class="prijzen">
+            <div class="flexprijzen">
+                <div class="prijzencontainer">
+                    <div class="formtitle"><h2>Een plek op camping De Groene Weide</h2></div>
+                    <p>kosten: €17,00 per plek per nacht</p>
+                    <p>...................</p>             
+                    <p>...................</p>             
+                    <p>...................</p>             
+                </div>
+                <div class="prijzencontainer">
+                    <div class="formtitle"><h2>Nog in te vullen</h2></div>
+                    <p>als u kiest voor een plek op camping De Groene Weide zorgen wij voor uw ultiem comfort. Zo bieden wij:</p> 
+                    <p>...................</p>             
+                    <p>...................</p>             
+                    <p>...................</p>             
+                </div>
+            </div>
+        </section>
+
+<!------------------------------------------einde prijzen--------------------------------------------->
+
 <!--------------------------------------------boeken-------------------------------------------------->
 
 
@@ -49,21 +72,21 @@
                 <form class="vakantieform" action="" method="" onsubmit="return false">
                     
                     <div class="formdiv1">
-                        <label class="labeltitle" for="Verblijfssoort">Verblijfssoort</label>
+                        <label class="labeltitle" for="Verblijfssoort" required>Verblijfssoort*</label>
                         <div class="radiocontainer"><input type="radio" id="Tent" name="Verblijfssoort" value="Tent"><label for="Tent">Tent</label></div>                      
                         <div class="radiocontainer"><input type="radio" id="CamperofCaravan" name="Verblijfssoort" value="Camper/Caravan"><label for="CamperofCaravan">Camper/Caravan</label></div>
                         <div class="radiocontainer"><input type="radio" id="CamperofCaravanentent" name="Verblijfssoort" value="Camper/Caravan en Tent"><label for="CamperofCaravanentent">Camper/Caravan en Tent</label></div>
                     </div>
                     
                     <div class="formdiv2">
-                        <div><label class="labeltitle" for="Aankomstvertrekdatum">Aankomst/vertrek en datum</label></div>
-                        <input type="date" id="Aankomstdatum" name="Aankomstdatum">
-                        <input type="date" id="Vertrekdatum" name="Vertrekdatum">
+                        <div><label class="labeltitle" for="Aankomstvertrekdatum">Aankomst/vertrek en datum*</label></div>
+                        <input type="date" id="Aankomstdatum" name="Aankomstdatum" required>
+                        <input type="date" id="Vertrekdatum" name="Vertrekdatum" required>
                     </div>
                     
                     <div class="formdiv3">
-                        <div><label class="labeltitle" for="Aantalpersonen">Aantal personen</label></div>
-                        <input type="number" id="Aantalpersonen" name="Aantalpersonen" value="1" min="1" max="8">
+                        <div><label class="labeltitle" for="Aantalpersonen">Aantal personen*</label></div>
+                        <input type="number" id="Aantalpersonen" name="Aantalpersonen" value="1" min="1" max="8" required>
                     </div>
 
                     <div class="formdiv4">
@@ -76,17 +99,17 @@
                     <div class="gegevensformdiv">
                         <div class="formrij1">
                             <div>
-                                <div><label for="Voornaam">Voornaam</label></div>
+                                <div><label for="Voornaam">Voornaam*</label></div>
                                 <input type="text" id="Voornaam" name="Voornaam" placeholder="Uw naam" required>
                             </div>
 
                             <div>
                                 <div><label for="Tussenvoegsel">Tussenvoegsel</label></div>
-                                <input type="text" id="Tussenvoegsel" name="Tussenvoegsel" placeholder="Een tussenvoegsel (optioneel)">
+                                <input type="text" id="Tussenvoegsel" name="Tussenvoegsel" placeholder="Een tussenvoegsel">
                             </div>
 
                             <div>
-                                <div><label for="Achternaam">Achternaam</label></div>
+                                <div><label for="Achternaam">Achternaam*</label></div>
                                 <input type="text" id="Achternaam" name="Achternaam" placeholder="Uw achternaam" required>
                             </div>
 
@@ -95,27 +118,29 @@
                         <div class="formrij2">
 
                             <div>
-                                <div><label for="Telefoonnummer">Telefoonnummer</label></div>
-                                <input type="tel" id="Telefoonnummer" name="Telefoonnummer" pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{2}" placeholder="06-123-456-78" required>
+                                <div><label for="Telefoonnummer">Telefoonnummer*</label></div>
+                                <input type="tel" id="Telefoonnummer" name="Telefoonnummer" pattern="[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{2}" placeholder="0612345678" required>
                             </div>
 
                             <div>
-                                <div><label for="Emailadres">Emailadres</label></div>
+                                <div><label for="Emailadres">Emailadres*</label></div>
                                 <input type="email" id="Emailadres" name="Emailadres" placeholder="Emailadres" required>
                             </div>
                         </div>
                     </div>
 
+                    <p>* = required</p>
+
                     <input onclick="formSubmitFunction()" class="boekbutton1" type="submit" value="Boeken">
 
-                    <label>Binnen een paar uur na het reserveren zult u een email ontvangen ter bevestiging van uw boeking</label>
                     <p id="formpopup"></p>
 
                 </form>
 
 
             
-            </div><!--i dont know why but i cant remove this without destroying the layout--></div>
+            </div>
+            </div>
 
             <div class="vakantieimage1">
                 <img class="border-radius" src="./img/paul-hermann-XJuhZqEE4Go-unsplash.jpg" width="100%" height="95%">

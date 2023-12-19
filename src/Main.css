@@ -254,10 +254,14 @@ li {
 .aanmelden {
     color:#fff;
     font-size:20px;
-    background-color:#3A7D44;
+    background-color:#3F7CAC;
     border-radius:40px;
     border:#000 0px solid;
     padding:10px 60px 10px 60px;
+}
+
+.aanmelden:hover {
+    background-color:#0D3B66;
 }
 
 .formitems input {
@@ -278,8 +282,7 @@ footer {
     align-items: center;
     flex-direction: column;
     justify-content:center;   
-    background-color:#69B578;
-    opacity:70%;
+    background-color:#209f33;
 }
 
 
