@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors({ origin: 'http://127.0.0.1:5500' }));  
+app.use(cors({ 
+  origin: ['http://127.0.0.1:5500', 'http://127.0.0.1.admin:5500'] }));  
 
 //--------------------database------------
 var mysql = require('mysql');
