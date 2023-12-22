@@ -146,7 +146,7 @@ app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
 });
 
 
-//----------------------ADMIN PAGINA---BOEKINGEN VRAGEN---------------------
+
 
 //app.get('/api/boekingen', (req, res) => {
 //  //const klantId = req.params.id;
@@ -177,10 +177,12 @@ app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
 //  });
 //  });
 
+//----------------------ADMIN PAGINA---BOEKINGEN VRAGEN---------------------
+
 app.get('/api/boekingen', (req, res) => {
 
   var sql = 'SELECT * FROM boeking';
-  
+
   db.query(sql, (err, result) => {
       if (err) {
           console.log(err);
