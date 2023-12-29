@@ -1,10 +1,11 @@
 * {
     box-sizing: border-box;
+    margin:0;
 }
 
 body {
     background-color: #fff;
-    margin:0px;
+    margin:0;
 }
 
 /* --header-------------------------------------------------------------------------------------------- */
@@ -41,7 +42,7 @@ h2 {
 
 .headercontainer {
     display:flex;
-    padding:0 0 0 40px;
+    padding:10px 0 0 40px;
 }
 
 /* --navbar-------------------------------------------------------------------------------------------- */
@@ -140,15 +141,19 @@ li {
     }
       
     .nav-menu {
+        display: flex;
+        align-items:flex-start;
         position:fixed;
-        left: -100%;
-        top:140px;
+        left: 100%;
+        top:110px;
         gap:0;
         flex-direction: column;
-        background-color:#006400;
-        width:100%;
+        background-color:#fff;
+        width:33%;
         text-align:center;
         transition: 0.3s;
+        border:#000 2px solid;
+        border-radius:20px;
     }
       
     .nav-item {
@@ -156,7 +161,7 @@ li {
     }
       
     .nav-menu.active {
-        left:0;
+        left:66%;
     }
 
 }
@@ -228,63 +233,78 @@ li {
     }
 
 }
-    
-
-/* --nieuwsbrief----------------------------------------------------------------------------------------*/
-
-.nieuwsbrief {
-    display:flex;
-    text-align:center;
-    flex-direction:column;
-    margin:100px 0 15px 0px;
-    text-align:left;
-}
-
-.nieuwsbriefbtncontainer {
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-}
-
-.formitems {
-    display:flex;
-    flex-direction:column;
-}
-
-.aanmelden {
-    color:#fff;
-    font-size:20px;
-    background-color:#3F7CAC;
-    border-radius:40px;
-    border:#000 0px solid;
-    padding:10px 60px 10px 60px;
-}
-
-.aanmelden:hover {
-    background-color:#0D3B66;
-}
-
-.formitems input {
-    padding:20px 200px 20px 20px;
-    margin:20px 0 10px 0;
-}
-
-
-/* --einde nieuwsbrief-------------------------------------------------------------------------------- */
 
 /* --einde main--------------------------------------------------------------------------------------- */
 
 
-/* --footer------------------------------------------------------------------------------------------- */
+/* --footer en nieuwsbrief---------------------------------------------------------------------------- */
 
 footer {
-    display:flex; 
-    align-items: center;
+    display:flex;
     flex-direction: column;
-    justify-content:center;   
-    background-color:#209f33;
+    margin:200px 0 0 0;
 }
 
+.nieuwsbrief {
+    display:flex;
+    flex-direction:column;    
+    align-items:center;
+    background:#e8f5ff;
+    padding:20px 0 20px 0;
+    margin:40px 0 0 0;
+}
 
-/* --einde footer------------------------------------------------------------------------------------- */
+.nieuwsbriefinputcontainer {
+    display:flex;
+    justify-content:center;
+    padding:20px 0 0 0;
+}
+
+.nieuwsbrief label {
+    font-size:15px;
+}
+
+.nieuwsbriefinput1 {
+    padding:15px 80px 15px 80px;
+    margin:0 5px 0 0;
+    border:#000 solid 1px;
+    border-radius:10px;
+}
+
+.nieuwsbriefinput2 {
+    padding:15px 40px 15px 40px;
+    margin:0 0 0 5px;
+    border:none;
+    border-radius:10px;
+    background:#5980f6;
+}
+
+#nieuwsbriefpopup {
+    padding:15px 0 0 0;
+}
+
+.infoline {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    background:#f1efef;
+    padding:20px 0 20px 0;
+}
+
+.contact {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+}   
+
+.infotext a {
+    text-decoration:none;
+}
+
+.contacttext {
+    padding:10px 10px 10px 10px;
+}
+
+/* --einde footer en nieuwsbrief---------------------------------------------------------------------- */
 
