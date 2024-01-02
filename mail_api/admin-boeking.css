@@ -1,0 +1,59 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .booking {
+            background-color: #ffffff;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .booking2 {
+            background-color: #ffffff;
+            margin: 10px;
+            padding: 10px 10px 10px 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        .booking h2 {
+            color: #008000;
+        }
+        .booking p {
+            color: #000000;
+        }
+        .booking button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .modify {
+            background-color: #ffffff;
+            color: #ff0000;
+        }
+        .cancel {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+
+
+
+        form {
+            display: none; /* Verberg het formulier standaard */
+            flex-direction: column;
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            margin: 10px 0;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+        }
