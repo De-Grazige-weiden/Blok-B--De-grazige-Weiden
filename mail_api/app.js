@@ -89,7 +89,6 @@ function createMailOptions(klant) {
 
 //----------------KLANT WEBSITE-----------BOEKING AANMAKEN EN VERSTUREN NAAR DB--------------------
 app.post('/api/klanten/boekingen', (req, res) => {
-  //const klantId = req.params.id;
   const postData = {
     verblijfssoort: req.body.verblijfssoort || null,
     aankomstDatum: req.body.aankomstDatum || null,
@@ -136,7 +135,7 @@ app.get('/api/boekingen', (req, res) => {
 
 //----------------ADMIN PAGINA----------------------BOEKING WIJZIGEN EN STUREN NAAR DB----------------
 app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
-  //const klantId = req.params.id;
+  const klantId = req.params.id;
   const postData = {
     verblijfssoort: req.body.verblijfssoort || null,
     aankomstDatum: req.body.aankomstDatum || null,
@@ -150,7 +149,7 @@ app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
     email: req.body.email || null
   };
 
-  var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.telefoonNummer, postData.email];
+  var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.telefoonNummer, postData.email, klantId];
 
   const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstDatum = ?, vertrekDatum = ?, aantalPersonen = ?, voorkeuren = ?, voorNaam = ?, achterNaam = ?, tussenVoegsel = ?, telefoonNummer = ?, email = ? WHERE id = ?';
 
@@ -162,3 +161,19 @@ app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
     res.send('De boeking is succesvol gewijzigd!');
   });
 });
+
+//------------------admin pagina--------boeking verwijderen--------------------
+app.delete('/api/klanten/boekingen/verwijderen/:id', (req, res) => {
+  const klantId = req.params.id;
+
+  const sql = 'DELETE FROM boekingen WHERE id = ?';
+
+  db.query(sql, klantId, (err, result) => {
+    if (err) {
+      res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
+      return;
+    }
+    res.send('De boeking is succesvol verwijderd!');
+  });
+});
+
