@@ -152,7 +152,7 @@ app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
 
   var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.telefoonNummer, postData.email];
 
-  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstDatum = ?, vertrekDatum = ?, aantalPersonen = ?, voorkeuren = ?, voorNaam = ?, achterNaam = ?, tussenVoegsel = ?, telefoonNummer = ?, email = ?';
+  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstDatum = ?, vertrekDatum = ?, aantalPersonen = ?, voorkeuren = ?, voorNaam = ?, achterNaam = ?, tussenVoegsel = ?, telefoonNummer = ?, email = ? WHERE id = ?';
 
   db.query(sql, values, (err, result) => {
     if (err) {
