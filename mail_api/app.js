@@ -135,25 +135,23 @@ app.get('/api/boekingen', (req, res) => {
 
 //----------------ADMIN PAGINA----------------------BOEKING WIJZIGEN EN STUREN NAAR DB----------------
 app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
-  const klantId = req.params.id;
-  const postData = {
-    verblijfssoort: req.body.verblijfssoort || null,
-    aankomstDatum: req.body.aankomstDatum || null,
-    vertrekDatum: req.body.vertrekDatum || null,
-    aantalPersonen: req.body.aantalPersonen || null,
-    voorkeuren: req.body.voorkeuren || null,
-    voorNaam: req.body.voorNaam || null,
-    achterNaam: req.body.achterNaam || null,
-    tussenVoegsel: req.body.tussenVoegsel || null,
-    phoneNumber: req.body.telefoonNummer || null,
-    email: req.body.email || null
-  };
+  //const klantId = req.params.id;
+  
+    let verblijfssoort = req.body.verblijfssoort;
+    let aankomstDatum = req.body.aankomstDatum;
+    let vertrekDatum = req.body.vertrekDatum;
+    let aantalPersonen = req.body.aantalPersonen;
+    let voorkeuren = req.body.voorkeuren;
+    let voorNaam = req.body.voorNaam;
+    let achterNaam = req.body.achterNaam;
+    let tussenVoegsel = req.body.tussenVoegsel;
+    let telefoonNummer = req.body.telefoonNummer;
+    let email = req.body.email;
+    let id = req.body.ID;
+  
+  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstdatum = ?, vertrekdatum = ?, aantalpersonen = ?, voorkeuren = ?, voornaam = ?, achternaam = ?, tussenvoegsel = ?, telefoonnummer = ?, email = ? WHERE ID = ?';
 
-  var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.telefoonNummer, postData.email, klantId];
-
-  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstDatum = ?, vertrekDatum = ?, aantalPersonen = ?, voorkeuren = ?, voorNaam = ?, achterNaam = ?, tussenVoegsel = ?, telefoonNummer = ?, email = ? WHERE id = ?';
-
-  db.query(sql, values, (err, result) => {
+  db.query(sql, [verblijfssoort, aankomstDatum, vertrekDatum, aantalPersonen, voorkeuren, voorNaam, achterNaam, tussenVoegsel, telefoonNummer, email, id], (err, result) => {
     if (err) {
       res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
       return;
@@ -164,9 +162,10 @@ app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
 
 //------------------admin pagina--------boeking verwijderen--------------------
 app.delete('/api/klanten/boekingen/verwijderen/:id', (req, res) => {
-  const klantId = req.params.id;
+  
+  let klantId = req.body.ID;
 
-  const sql = 'DELETE FROM boekingen WHERE id = ?';
+  const sql = 'DELETE FROM boeking WHERE ID = ?';
 
   db.query(sql, klantId, (err, result) => {
     if (err) {
