@@ -271,7 +271,7 @@ li {
 }
 
 .boekbutton1:hover {
-    background-color:#ddf272;
+    background-color:#72c9f2;
 }
 
 @media (max-width:1000px){
@@ -316,7 +316,7 @@ li {
     display:flex;
     flex-direction:column;
 
-    background-color:#3A7D44;
+    background-color:#3a3a7d;
     padding:50px 20px 50px 20px;
     margin:20px 0 20px 0;
     border-radius:0 0 40px 40px;
