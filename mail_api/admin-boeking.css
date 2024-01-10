@@ -31,8 +31,8 @@ body {
             cursor: pointer;
         }
         .modify {
-            background-color: #ffffff;
-            color: #ff0000;
+            background-color: #59ff00;
+            color: #000000;
         }
         .cancel {
             background-color: #ff0000;

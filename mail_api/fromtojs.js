@@ -16,7 +16,7 @@ const vakantieform = document.getElementById('vakantieform')
 
   console.log(json);
 
-  const response = fetch("http://localhost:5500/api/send-email", {
+  fetch("http://localhost:5500/api/send-email", {
     method: "POST",
     headers:
     {
@@ -25,7 +25,7 @@ const vakantieform = document.getElementById('vakantieform')
     body: json,
   });
 
-  const antwoord = fetch("http://localhost:5500/api/klanten/boekingen", {
+  fetch("http://localhost:5500/api/klanten/boekingen", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
