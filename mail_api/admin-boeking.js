@@ -22,7 +22,7 @@ fetch('http://localhost:5500/api/boekingen')
       <button id="modify" class="modify">Wijzigen</button>
       <button id="cancel" class="cancel">Annuleren</button> 
 
-      <form id="bookingForm">
+        <form id="bookingForm">
           <label>
               Verblijfssoort:
               <input type="text" id="verblijfssoort" name="verblijfssoort">
@@ -67,7 +67,6 @@ fetch('http://localhost:5500/api/boekingen')
               Boekingsnummer:
               <input type="number" id="id" name="ID">
           </label>
-          
           
           <input type="submit" value="Wijzigen">
           <input id="annuleren" type="submit" value="Annuleren">
