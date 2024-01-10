@@ -13,7 +13,7 @@ fetch('http://localhost:5500/api/boekingen')
       element.innerHTML = `
       <div class="booking">
       <h2>Boeking ${data.ID} </h2>
-      <p>Gegevens:<b> Voornaam:${data.voornaam} – <b>Tussenvoegsel:<b> ${data.tussenvoegsel} – <b>Achternaam:<b> ${data.achternaam} – <b>Telefoonnummer:<b> ${data.telefoonnummer} – <b>Email:<b> ${data.email} </p>
+      <p>Gegevens:<b> Voornaam:${data.voornaam} – Tussenvoegsel:<b> ${data.tussenvoegsel} – <b>Achternaam:<b> ${data.achternaam} – <b>Telefoonnummer:<b> ${data.telefoonnummer} – <b>Email:<b> ${data.email} </p>
       <p><b>Verblijfssoort:<b> ${data.verblijfssoort} – <b>Aankomstdatum:<b> ${data.aankomstdatum} <b>Vertrekdatum:<b> ${data.vertrekdatum} – <b>Aantal personen:<b> ${data.aantalpersonen} <b>ID:<b> ${data.ID} </p>
       <button id="modify" class="modify">Wijzigen</button>
       <button id="cancel" class="cancel">Annuleren</button> 
@@ -60,7 +60,7 @@ fetch('http://localhost:5500/api/boekingen')
               <input type="email" id="email" name="email">
           </label>
           <label>
-              ID:
+              Boekingsnummer:
               <input type="number" id="id" name="ID">
           </label>
           
@@ -74,11 +74,11 @@ fetch('http://localhost:5500/api/boekingen')
 
       const button = document.querySelector('#modify') 
  
-      button.addEventListener('click', e => { 
+        button.addEventListener('click', e => { 
           document.getElementById('modify').style.display = 'none';
           document.getElementById('cancel').style.display = 'none';
-      }) 
-
+      }); 
+    
       document.getElementById('modify').addEventListener('click', function() {
         document.getElementById('bookingForm').style.display = 'block'; // Toon het formulier
     });
@@ -92,12 +92,40 @@ fetch('http://localhost:5500/api/boekingen')
         document.getElementById('annuleren').style.display = 'none';
     });
 
+    //---------------FETCH verzoek naar API voor DELETE en WIJZIGEN---------
+
+const bookingform = document.getElementById('bookingForm')
+
+bookingform.addEventListener('submit', event => {
+event.preventDefault();
+
+var bookingformData = new FormData(bookingform);
+var object = {};
+
+bookingformData.forEach(function (value, key) {
+  object[key] = value;
+});
+
+var json = JSON.stringify(object);
+
+console.log(json);
+
+ fetch("http://localhost:5500/api/klanten/boekingen/wijzigen/:id", {
+    method: "PATCH",
+    headers:
+    {
+        'Content-Type': 'application/json',
+    },
+    body: json,
+ });
+});
+
+
     });
   })
   .catch(error => {
     console.error('Error fetching data:', error);
   });
-
 
 
 
