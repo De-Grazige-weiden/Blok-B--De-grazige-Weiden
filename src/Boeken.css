@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin:0;
 }
 
 body {
@@ -171,45 +172,6 @@ li {
 
 /* --main--------------------------------------------------------------------------------------------- */
 
-/* --prijzen------------------------------------------------------------------------------------------ */
-
-
-.prijzen {
-    display:flex;
-    justify-content:center;
-}
-
-.flexprijzen {
-    display:flex;
-    flex-direction:row;
-    background-color:#3db64f;
-    border-radius: 40px;
-    width:99%;
-    margin:30px 0px 0px 0px;
-}
-
-.formtitle {
-    padding:10px 10px 0px 20px;
-}
-
-.prijzencontainer {
-    padding:0px 50px 20px 20px;
-}
-
-.prijzen p {
-    padding:10px 10px 0px 20px;
-}
-
-@media (max-width:1000px) {
-    .flexprijzen {
-        display:flex;
-        justify-content: center;
-        width:95%;
-    }
-}
-
-
-/* --einde prijzen------------------------------------------------------------------------------------ */
 
 /* --boeken------------------------------------------------------------------------------------------- */
 
@@ -232,7 +194,7 @@ li {
     display:flex;
     flex-direction:column;
     height:85%;
-    background-color:#3db64f;
+    background-color:#69B578;
     border-radius:40px 0 0 0;
 }
 
@@ -380,60 +342,114 @@ li {
 
 /* --einde boeken------------------------------------------------------------------------------------- */
 
+/* --prijzen------------------------------------------------------------------------------------------ */
 
-/* --nieuwsbrief---------------------------------------------------------------------------------------*/
+
+.prijzen {
+    display:flex;
+    justify-content:center;
+}
+
+.flexprijzen {
+    display:flex;
+    flex-direction:row;
+    background-color:#69B578;
+    border-radius: 40px;
+    width:99%;
+    margin:30px 0px 0px 0px;
+}
+
+.formtitle {
+    padding:10px 10px 0px 20px;
+}
+
+.prijzencontainer {
+    padding:0px 50px 20px 20px;
+}
+
+.prijzen p {
+    padding:10px 10px 0px 20px;
+}
+
+@media (max-width:1000px) {
+    .flexprijzen {
+        display:flex;
+        justify-content: center;
+        width:95%;
+    }
+}
+
+
+/* --einde prijzen------------------------------------------------------------------------------------ */
+
+
+/* --footer en nieuwsbrief---------------------------------------------------------------------------- */
+
+footer {
+    display:flex;
+    flex-direction: column;
+    margin:200px 0 0 0;
+}
 
 .nieuwsbrief {
     display:flex;
-    text-align:center;
-    flex-direction:column;
-    margin:0px 0 15px 0px;
-    text-align:left;
+    flex-direction:column;    
+    align-items:center;
+    background:#e8f5ff;
+    padding:20px 0 20px 0;
+    margin:40px 0 0 0;
 }
 
-.nieuwsbriefbtncontainer {
+.nieuwsbriefinputcontainer {
+    display:flex;
+    justify-content:center;
+    padding:20px 0 0 0;
+}
+
+.nieuwsbrief label {
+    font-size:15px;
+}
+
+.nieuwsbriefinput1 {
+    padding:15px 80px 15px 80px;
+    margin:0 5px 0 0;
+    border:#000 solid 1px;
+    border-radius:10px;
+}
+
+.nieuwsbriefinput2 {
+    padding:15px 40px 15px 40px;
+    margin:0 0 0 5px;
+    border:none;
+    border-radius:10px;
+    background:#5980f6;
+}
+
+#nieuwsbriefpopup {
+    padding:15px 0 0 0;
+}
+
+.infoline {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    background:#f1efef;
+    padding:20px 0 20px 0;
+}
+
+.contact {
     display:flex;
     flex-direction:column;
     text-align:center;
+}   
+
+.infotext a {
+    text-decoration:none;
 }
 
-.formitems {
-    display:flex;
-    flex-direction:column;
+.contacttext {
+    padding:10px 10px 10px 10px;
 }
 
-.aanmelden {
-    color:#fff;
-    font-size:20px;
-    background-color:#3F7CAC;
-    border-radius:40px;
-    border:#000 0px solid;
-    padding:10px 60px 10px 60px;
-}
-.aanmelden 
-
-.aanmelden:hover {
-    background-color:#0D3B66;
-}
-
-.formitems input {
-    padding:20px 100px 20px 100px;
-    margin:20px 0 0 0;
-}
-
-/* --einde nieuwsbrief-------------------------------------------------------------------------------- */
-
-/* --einde main--------------------------------------------------------------------------------------- */
-
-/* --footer------------------------------------------------------------------------------------------- */
-
-footer {
-    display:flex; 
-    align-items: center;
-    flex-direction: column;
-    justify-content:center;   
-    background-color:#209f33;
-}
-
-
-/* --einde footer------------------------------------------------------------------------------------- */
+/* --einde footer en nieuwsbrief---------------------------------------------------------------------- */
