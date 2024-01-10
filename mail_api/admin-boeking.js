@@ -11,10 +11,14 @@ fetch('http://localhost:5500/api/boekingen')
       let element = document.createElement('div');
       element.setAttribute('data-name', data.name);
       element.innerHTML = `
-      <div class="booking">
+    
+    <div class="booking">
+
       <h2>Boeking ${data.ID} </h2>
+
       <p>Gegevens:<b> Voornaam: ${data.voornaam} – Tussenvoegsel:<b> ${data.tussenvoegsel} – <b>Achternaam:<b> ${data.achternaam} – <b>Telefoonnummer:<b> ${data.telefoonnummer} – <b>Email:<b> ${data.email} </p>
       <p><b>Verblijfssoort:<b> ${data.verblijfssoort} – <b>Aankomstdatum:<b> ${data.aankomstdatum} <b>Vertrekdatum:<b> ${data.vertrekdatum} – <b>Aantal personen:<b> ${data.aantalpersonen} <b>Boekingsnummer:<b> ${data.ID} </p>
+
       <button id="modify" class="modify">Wijzigen</button>
       <button id="cancel" class="cancel">Annuleren</button> 
 
@@ -67,8 +71,8 @@ fetch('http://localhost:5500/api/boekingen')
           
           <input type="submit" value="Wijzigen">
           <input id="annuleren" type="submit" value="Annuleren">
-      </form>
-   </div>
+        </form>
+    </div>
       `;
       container.appendChild(element);
 
