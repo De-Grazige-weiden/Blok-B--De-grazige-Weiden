@@ -86,29 +86,10 @@ fetch('http://localhost:5500/api/boekingen')
       `;
       container.appendChild(element);
 
-      //------------------------------------VERWIJDEREN BOEKING-----------------------oude code-----------
-      //const button = document.querySelector('.modify') 
-      //const button2 = document.querySelector('.cancel')
-
-      //button2.addEventListener('click', e => { 
-      //  document.getElementById('modify').style.display = 'none';
-      //  document.getElementById('cancel').style.display = 'none';
-      //});
-
-      //document.getElementById('cancel').addEventListener('click', function() {
-      //  document.getElementById('bookingForm2').style.display = 'block'; // Toon het formulier
-      //});
-
-      //document.getElementById('bookingForm2').addEventListener('submit', function(e) {
-        //document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
-    //document.getElementById('annuleren2').style.display = 'none';
-    //});
-
-//-------------------VERWIJDEREN BUTTON-------------------------------
-
 const modifyButtons = document.querySelectorAll('.modify');
 const cancelButtons = document.querySelectorAll('.cancel');
 
+//-------------------WIJZIGEN BUTTON-------------------------------
 modifyButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
     // Verberg de huidige knop en de volgende knop
@@ -121,6 +102,7 @@ modifyButtons.forEach((button) => {
   });
 });
 
+//-------------------VERWIJDEREN BUTTON-------------------------------
 cancelButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
     // Verberg de huidige knop en de volgende knop
@@ -151,47 +133,12 @@ bookingForms.forEach((form) => {
 });
 
 
-
 document.getElementById('bookingForm2').addEventListener('submit', function(e) {
   document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
 document.getElementById('annuleren2').style.display = 'none';
 });
 
 
-
-// Voeg event listeners toe aan alle 'cancel' knoppen
-//cancelButtons.forEach((button) => {
-//  button.addEventListener('click', (e) => {
-//    e.preventDefault();
-//    e.target.style.display = 'none';
-//    e.target.previousElementSibling.style.display = 'none';
-//    document.querySelector('.bookingForm2').style.display = 'block'; // Toon het formulier
-//  });
-//});
-//
-  
-
-
-    //---------------------------WIJZIGEN Button---------------------
-    //    button.addEventListener('click', e => { 
-    //      document.querySelector('.modify').style.display = 'none';
-    //      document.querySelector('.cancel').style.display = 'none';
-    //  }); 
-    //
-    //  document.querySelector('.modify').addEventListener('click', function() {
-    //    document.querySelector('.bookingForm').style.display = 'block'; // Toon het formulier
-    //});
-    //
-    //document.querySelector('.bookingForm').addEventListener('submit', function(e) {
-    //    e.preventDefault();
-    //
-    //    // Dezelfde code als voorheen om de form data te verwerken
-    //
-    //    document.querySelector('.bookingForm').style.display = 'none'; // Verberg het formulier weer
-    //    document.querySelector('.annuleren').style.display = 'none';
-    //});
-//
-//
     //---------------FETCH verzoek naar API voor WIJZIGEN----------------------
     const bookingform = document.querySelector('.bookingForm')
     const bookingform2 = document.querySelector('.bookingForm2')
@@ -223,18 +170,18 @@ document.getElementById('annuleren2').style.display = 'none';
     //--------------------------FETCH voor VERWIJDEREN BOEKING------------------
     bookingform2.addEventListener('submit', event => {
       event.preventDefault();
-  
+
       var bookingformData = new FormData(bookingform2);
       var object = {};
-  
+
       bookingformData.forEach(function (value, key) {
         object[key] = value;
       });
-  
+
       var json = JSON.stringify(object);
-  
+
       console.log(json);
-  
+
       fetch("http://localhost:5500/api/klanten/boekingen/verwijderen/:id", {
           method: "DELETE",
           headers:
@@ -243,7 +190,7 @@ document.getElementById('annuleren2').style.display = 'none';
           },
           body: json,
         });
-      });
+    });
 
     });
   })
@@ -251,3 +198,47 @@ document.getElementById('annuleren2').style.display = 'none';
   .catch(error => {
     console.error('Error fetching data:', error);
   });
+
+
+
+
+
+
+
+  //------------------------------------VERWIJDEREN BOEKING-----------------------oude code-----------
+      //const button = document.querySelector('.modify') 
+      //const button2 = document.querySelector('.cancel')
+
+      //button2.addEventListener('click', e => { 
+      //  document.getElementById('modify').style.display = 'none';
+      //  document.getElementById('cancel').style.display = 'none';
+      //});
+
+      //document.getElementById('cancel').addEventListener('click', function() {
+      //  document.getElementById('bookingForm2').style.display = 'block'; // Toon het formulier
+      //});
+
+      //document.getElementById('bookingForm2').addEventListener('submit', function(e) {
+        //document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
+    //document.getElementById('annuleren2').style.display = 'none';
+    //});
+  
+//---------------------------WIJZIGEN Button---------------------
+//    button.addEventListener('click', e => { 
+//      document.querySelector('.modify').style.display = 'none';
+//      document.querySelector('.cancel').style.display = 'none';
+//  }); 
+//
+//  document.querySelector('.modify').addEventListener('click', function() {
+//    document.querySelector('.bookingForm').style.display = 'block'; // Toon het formulier
+//});
+//
+//document.querySelector('.bookingForm').addEventListener('submit', function(e) {
+//    e.preventDefault();
+//
+//    // Dezelfde code als voorheen om de form data te verwerken
+//
+//    document.querySelector('.bookingForm').style.display = 'none'; // Verberg het formulier weer
+//    document.querySelector('.annuleren').style.display = 'none';
+//});
+//
