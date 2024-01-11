@@ -20,7 +20,17 @@ fetch('http://localhost:5500/api/boekingen')
       <p><b>Verblijfssoort:<b> ${data.verblijfssoort} – <b>Aankomstdatum:<b> ${data.aankomstdatum} <b>Vertrekdatum:<b> ${data.vertrekdatum} – <b>Aantal personen:<b> ${data.aantalpersonen} <b>Boekingsnummer:<b> ${data.ID} </p>
 
       <button id="modify" class="modify">Wijzigen</button>
-      <button id="cancel" class="cancel">Annuleren</button> 
+      <button id="cancel" class="cancel">Annuleren</button>
+      
+          <form id="bookingForm2">
+            <label>
+                Boekingsnummer:
+                <input type="number" id="id" name="ID">
+            </label>
+            <p>Weet u het zeker dat u de boeking wilt verwijderen?</p>
+            <input id="verwijderen" type="submit" value="Verwijderen">
+            <input id="annuleren2" type="submit" value="Annuleren">
+          </form>
 
         <form id="bookingForm">
           <label>
@@ -68,7 +78,7 @@ fetch('http://localhost:5500/api/boekingen')
               <input type="number" id="id" name="ID">
           </label>
           
-          <input type="submit" value="Wijzigen">
+          <input id="wijzigen" type="submit" value="Wijzigen">
           <input id="annuleren" type="submit" value="Annuleren">
         </form>
     </div>
@@ -76,7 +86,30 @@ fetch('http://localhost:5500/api/boekingen')
       container.appendChild(element);
 
       const button = document.querySelector('#modify') 
- 
+      const button2 = document.querySelector('#cancel')
+
+//-------------------VERWIJDEREN BUTTON-------------------------------
+      button2.addEventListener('click', e => { 
+        document.getElementById('modify').style.display = 'none';
+        document.getElementById('cancel').style.display = 'none';
+      });
+
+    document.getElementById('cancel').addEventListener('click', function() {
+      document.getElementById('bookingForm2').style.display = 'block'; // Toon het formulier
+    });
+
+    document.getElementById('bookingForm2').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Dezelfde code als voorheen om de form data te verwerken
+
+    document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
+    document.getElementById('annuleren2').style.display = 'none';
+    });
+  
+
+
+    //---------------------------WIJZIGEN Button---------------------
         button.addEventListener('click', e => { 
           document.getElementById('modify').style.display = 'none';
           document.getElementById('cancel').style.display = 'none';
@@ -95,44 +128,63 @@ fetch('http://localhost:5500/api/boekingen')
         document.getElementById('annuleren').style.display = 'none';
     });
 
-    //---------------FETCH verzoek naar API voor DELETE en WIJZIGEN---------
 
-const bookingform = document.getElementById('bookingForm')
+    //---------------FETCH verzoek naar API voor WIJZIGEN----------------------
+    const bookingform = document.getElementById('bookingForm')
+    const bookingform2 = document.getElementById('bookingForm2')
 
-bookingform.addEventListener('submit', event => {
-event.preventDefault();
+    bookingform.addEventListener('submit', event => {
+    event.preventDefault();
 
-var bookingformData = new FormData(bookingform);
-var object = {};
+    var bookingformData = new FormData(bookingform);
+    var object = {};
 
-bookingformData.forEach(function (value, key) {
-  object[key] = value;
-});
+    bookingformData.forEach(function (value, key) {
+      object[key] = value;
+    });
 
-var json = JSON.stringify(object);
+    var json = JSON.stringify(object);
 
-console.log(json);
+    console.log(json);
 
- fetch("http://localhost:5500/api/klanten/boekingen/wijzigen/:id", {
-    method: "PATCH",
-    headers:
-    {
-        'Content-Type': 'application/json',
-    },
-    body: json,
- });
-});
+    fetch("http://localhost:5500/api/klanten/boekingen/wijzigen/:id", {
+        method: "PATCH",
+        headers:
+        {
+            'Content-Type': 'application/json',
+        },
+        body: json,
+      });
+    });
 
+    //--------------------------FETCH voor VERWIJDEREN BOEKING------------------
+    bookingform2.addEventListener('submit', event => {
+      event.preventDefault();
+  
+      var bookingformData = new FormData(bookingform2);
+      var object = {};
+  
+      bookingformData.forEach(function (value, key) {
+        object[key] = value;
+      });
+  
+      var json = JSON.stringify(object);
+  
+      console.log(json);
+  
+      fetch("http://localhost:5500/api/klanten/boekingen/verwijderen/:id", {
+          method: "DELETE",
+          headers:
+          {
+              'Content-Type': 'application/json',
+          },
+          body: json,
+        });
+      });
 
     });
   })
+
   .catch(error => {
     console.error('Error fetching data:', error);
   });
-
-
-
-
-
-
-

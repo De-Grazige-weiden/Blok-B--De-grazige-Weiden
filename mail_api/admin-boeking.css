@@ -39,6 +39,22 @@ body {
             color: #ffffff;
         }
 
+        #annuleren2, #annuleren {
+            border-radius: 5px;
+            color: #000000;
+            background-color: rgb(126, 255, 126);
+            font-weight: bold;
+            border: 5px black;
+        }
+
+        #verwijderen, #wijzigen {
+            border-radius: 5px;
+            color: #000000;
+            background-color: rgb(255, 126, 126);
+            font-weight: bold; 
+            border: 5px black;
+        }
+
 
 
         form {
