@@ -135,7 +135,6 @@ app.get('/api/boekingen', (req, res) => {
 
 //----------------ADMIN PAGINA----------------------BOEKING WIJZIGEN EN STUREN NAAR DB----------------
 app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
-  //const klantId = req.params.id;
   
     let verblijfssoort = req.body.verblijfssoort;
     let aankomstdatum = req.body.aankomstdatum;

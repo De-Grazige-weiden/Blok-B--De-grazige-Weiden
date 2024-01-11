@@ -17,22 +17,23 @@ fetch('http://localhost:5500/api/boekingen')
       <h2>Boeking ${data.ID} </h2>
 
       <p>Gegevens:<b> Voornaam: ${data.voornaam} – Tussenvoegsel:<b> ${data.tussenvoegsel} – <b>Achternaam:<b> ${data.achternaam} – <b>Telefoonnummer:<b> ${data.telefoonnummer} – <b>Email:<b> ${data.email} </p>
-      <p><b>Verblijfssoort:<b> ${data.verblijfssoort} – <b>Aankomstdatum:<b> ${data.aankomstdatum} <b>Vertrekdatum:<b> ${data.vertrekdatum} – <b>Aantal personen:<b> ${data.aantalpersonen} <b>Boekingsnummer:<b> ${data.ID} </p>
+
+      <p><b>Verblijfssoort:<b> ${data.verblijfssoort} – <b>Aankomstdatum:<b> ${data.aankomstdatum} – <b>Vertrekdatum:<b> ${data.vertrekdatum} – <b>Aantal personen:<b> ${data.aantalpersonen} – <b>Boekingsnummer:<b> ${data.ID} </p>
 
       <button id="modify" class="modify">Wijzigen</button>
       <button id="cancel" class="cancel">Annuleren</button>
       
-          <form id="bookingForm2">
+          <form class="bookingForm2" id="bookingForm2">
             <label>
                 Boekingsnummer:
                 <input type="number" id="id" name="ID">
             </label>
             <p>Weet u het zeker dat u de boeking wilt verwijderen?</p>
-            <input id="verwijderen" type="submit" value="Verwijderen">
-            <input id="annuleren2" type="submit" value="Annuleren">
+            <input class="verwijderen" id="verwijderen" type="submit" value="Verwijderen">
+            <input class="annuleren2" id="annuleren2" type="submit" value="Annuleren">
           </form>
 
-        <form id="bookingForm">
+        <form class="bookingForm" id="bookingForm">
           <label>
               Verblijfssoort:
               <input type="text" id="verblijfssoort" name="verblijfssoort">
@@ -67,7 +68,7 @@ fetch('http://localhost:5500/api/boekingen')
           </label>
           <label>
               Telefoonnummer:
-              <input type="tel" id="phoneNumber" name="phonenumber">
+              <input type="tel" id="phoneNumber" name="telefoonnummer" pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{2}" placeholder="06-123-456-78">
           </label>
           <label>
               Email:
@@ -78,60 +79,122 @@ fetch('http://localhost:5500/api/boekingen')
               <input type="number" id="id" name="ID">
           </label>
           
-          <input id="wijzigen" type="submit" value="Wijzigen">
-          <input id="annuleren" type="submit" value="Annuleren">
+          <input class="wijzigen" id="wijzigen" type="submit" value="Wijzigen">
+          <input class="annuleren" id="annuleren" type="submit" value="Annuleren">
         </form>
     </div>
       `;
       container.appendChild(element);
 
-      const button = document.querySelector('#modify') 
-      const button2 = document.querySelector('#cancel')
+      //------------------------------------VERWIJDEREN BOEKING-----------------------oude code-----------
+      //const button = document.querySelector('.modify') 
+      //const button2 = document.querySelector('.cancel')
+
+      //button2.addEventListener('click', e => { 
+      //  document.getElementById('modify').style.display = 'none';
+      //  document.getElementById('cancel').style.display = 'none';
+      //});
+
+      //document.getElementById('cancel').addEventListener('click', function() {
+      //  document.getElementById('bookingForm2').style.display = 'block'; // Toon het formulier
+      //});
+
+      //document.getElementById('bookingForm2').addEventListener('submit', function(e) {
+        //document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
+    //document.getElementById('annuleren2').style.display = 'none';
+    //});
 
 //-------------------VERWIJDEREN BUTTON-------------------------------
-      button2.addEventListener('click', e => { 
-        document.getElementById('modify').style.display = 'none';
-        document.getElementById('cancel').style.display = 'none';
-      });
 
-    document.getElementById('cancel').addEventListener('click', function() {
-      document.getElementById('bookingForm2').style.display = 'block'; // Toon het formulier
-    });
+const modifyButtons = document.querySelectorAll('.modify');
+const cancelButtons = document.querySelectorAll('.cancel');
 
-    document.getElementById('bookingForm2').addEventListener('submit', function(e) {
+modifyButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    // Verberg de huidige knop en de volgende knop
+    e.target.style.display = 'none';
+    e.target.nextElementSibling.style.display = 'none';
+    
+
+    // Toon het juiste formulier
+    e.target.parentElement.querySelector('.bookingForm').style.display = 'block';
+  });
+});
+
+cancelButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    // Verberg de huidige knop en de volgende knop
+    e.target.style.display = 'none';
+    e.target.nextElementSibling.style.display = 'none';
+
+    // Toon het juiste formulier
+    e.target.parentElement.querySelector('.bookingForm2').style.display = 'block';
+  });
+});
+
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        document.getElementById('bookingForm').style.display = 'none'; // Verberg het formulier weer
+    document.getElementById('annuleren').style.display = 'none';
+});
+
+const bookingForms = document.querySelectorAll('.bookingForm, .bookingForm2');
+
+bookingForms.forEach((form) => {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Dezelfde code als voorheen om de form data te verwerken
 
-    document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
-    document.getElementById('annuleren2').style.display = 'none';
-    });
+    form.style.display = 'none'; // Verberg het formulier weer
+    
+  });
+});
+
+
+
+document.getElementById('bookingForm2').addEventListener('submit', function(e) {
+  document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
+document.getElementById('annuleren2').style.display = 'none';
+});
+
+
+
+// Voeg event listeners toe aan alle 'cancel' knoppen
+//cancelButtons.forEach((button) => {
+//  button.addEventListener('click', (e) => {
+//    e.preventDefault();
+//    e.target.style.display = 'none';
+//    e.target.previousElementSibling.style.display = 'none';
+//    document.querySelector('.bookingForm2').style.display = 'block'; // Toon het formulier
+//  });
+//});
+//
   
 
 
     //---------------------------WIJZIGEN Button---------------------
-        button.addEventListener('click', e => { 
-          document.getElementById('modify').style.display = 'none';
-          document.getElementById('cancel').style.display = 'none';
-      }); 
-    
-      document.getElementById('modify').addEventListener('click', function() {
-        document.getElementById('bookingForm').style.display = 'block'; // Toon het formulier
-    });
-    
-    document.getElementById('bookingForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-    
-        // Dezelfde code als voorheen om de form data te verwerken
-    
-        document.getElementById('bookingForm').style.display = 'none'; // Verberg het formulier weer
-        document.getElementById('annuleren').style.display = 'none';
-    });
-
-
+    //    button.addEventListener('click', e => { 
+    //      document.querySelector('.modify').style.display = 'none';
+    //      document.querySelector('.cancel').style.display = 'none';
+    //  }); 
+    //
+    //  document.querySelector('.modify').addEventListener('click', function() {
+    //    document.querySelector('.bookingForm').style.display = 'block'; // Toon het formulier
+    //});
+    //
+    //document.querySelector('.bookingForm').addEventListener('submit', function(e) {
+    //    e.preventDefault();
+    //
+    //    // Dezelfde code als voorheen om de form data te verwerken
+    //
+    //    document.querySelector('.bookingForm').style.display = 'none'; // Verberg het formulier weer
+    //    document.querySelector('.annuleren').style.display = 'none';
+    //});
+//
+//
     //---------------FETCH verzoek naar API voor WIJZIGEN----------------------
-    const bookingform = document.getElementById('bookingForm')
-    const bookingform2 = document.getElementById('bookingForm2')
+    const bookingform = document.querySelector('.bookingForm')
+    const bookingform2 = document.querySelector('.bookingForm2')
 
     bookingform.addEventListener('submit', event => {
     event.preventDefault();
