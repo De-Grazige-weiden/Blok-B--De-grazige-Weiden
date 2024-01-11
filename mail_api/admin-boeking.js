@@ -96,7 +96,6 @@ modifyButtons.forEach((button) => {
     e.target.style.display = 'none';
     e.target.nextElementSibling.style.display = 'none';
     
-
     // Toon het juiste formulier
     e.target.parentElement.querySelector('.bookingForm').style.display = 'block';
   });
