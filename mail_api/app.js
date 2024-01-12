@@ -174,4 +174,3 @@ app.delete('/api/klanten/boekingen/verwijderen/:id', (req, res) => {
     res.send('De boeking is succesvol verwijderd!');
   });
 });
-

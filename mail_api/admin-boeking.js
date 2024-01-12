@@ -114,22 +114,6 @@ formWijzigen.forEach((form) => {
   });
 });
 
-formVerwijderen.forEach((form) => {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    form.style.display = 'none'; // Verberg het formulier weer
-    if (form.nextElementSibling) {
-      form.nextElementSibling.style.display = 'none';
-  }
-  });
-});
-
-
-//------OUDE
-//document.getElementById('bookingForm').addEventListener('submit', function(e) {
-//  document.getElementById('bookingForm').style.display = 'none'; // Verberg het formulier weer
-//document.getElementById('annuleren').style.display = 'none';
-
 //-------------------VERWIJDEREN BUTTON-------------------------------
 cancelButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -142,25 +126,24 @@ cancelButtons.forEach((button) => {
   });
 });
 
-//document.getElementById('bookingForm2').addEventListener('submit', function(e) {
-//  document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
-//document.getElementById('annuleren2').style.display = 'none';
-//});
+formVerwijderen.forEach((form) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none'; // Verberg het formulier weer
+    if (form.nextElementSibling) {
+      form.nextElementSibling.style.display = 'none';
+  }
+  });
+});
 
 const bookingForms = document.querySelectorAll('.bookingForm, .bookingForm2');
 
 bookingForms.forEach((form) => {
   form.addEventListener('submit', function(e) {
 
-    // Dezelfde code als voorheen om de form data te verwerken
-
-    form.style.display = 'none'; // Verberg het formulier weer
-    
+    form.style.display = 'none';
   });
 });
-
-
-
 
 
     //---------------FETCH verzoek naar API voor WIJZIGEN----------------------
@@ -226,47 +209,3 @@ bookingForms.forEach((form) => {
   .catch(error => {
     console.error('Error fetching data:', error);
   });
-
-
-
-
-
-
-
-  //------------------------------------VERWIJDEREN BOEKING-----------------------oude code-----------
-      //const button = document.querySelector('.modify') 
-      //const button2 = document.querySelector('.cancel')
-
-      //button2.addEventListener('click', e => { 
-      //  document.getElementById('modify').style.display = 'none';
-      //  document.getElementById('cancel').style.display = 'none';
-      //});
-
-      //document.getElementById('cancel').addEventListener('click', function() {
-      //  document.getElementById('bookingForm2').style.display = 'block'; // Toon het formulier
-      //});
-
-      //document.getElementById('bookingForm2').addEventListener('submit', function(e) {
-        //document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
-    //document.getElementById('annuleren2').style.display = 'none';
-    //});
-  
-//---------------------------WIJZIGEN Button---------------------
-//    button.addEventListener('click', e => { 
-//      document.querySelector('.modify').style.display = 'none';
-//      document.querySelector('.cancel').style.display = 'none';
-//  }); 
-//
-//  document.querySelector('.modify').addEventListener('click', function() {
-//    document.querySelector('.bookingForm').style.display = 'block'; // Toon het formulier
-//});
-//
-//document.querySelector('.bookingForm').addEventListener('submit', function(e) {
-//    e.preventDefault();
-//
-//    // Dezelfde code als voorheen om de form data te verwerken
-//
-//    document.querySelector('.bookingForm').style.display = 'none'; // Verberg het formulier weer
-//    document.querySelector('.annuleren').style.display = 'none';
-//});
-//
