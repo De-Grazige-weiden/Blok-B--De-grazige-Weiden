@@ -101,6 +101,35 @@ modifyButtons.forEach((button) => {
   });
 });
 
+formWijzigen = document.querySelectorAll('.bookingForm');
+formVerwijderen = document.querySelectorAll('.bookingForm2');
+
+formWijzigen.forEach((form) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none'; // Verberg het formulier weer
+    if (form.nextElementSibling) {
+      form.nextElementSibling.style.display = 'none';
+  }
+  });
+});
+
+formVerwijderen.forEach((form) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none'; // Verberg het formulier weer
+    if (form.nextElementSibling) {
+      form.nextElementSibling.style.display = 'none';
+  }
+  });
+});
+
+
+//------OUDE
+//document.getElementById('bookingForm').addEventListener('submit', function(e) {
+//  document.getElementById('bookingForm').style.display = 'none'; // Verberg het formulier weer
+//document.getElementById('annuleren').style.display = 'none';
+
 //-------------------VERWIJDEREN BUTTON-------------------------------
 cancelButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
@@ -113,16 +142,15 @@ cancelButtons.forEach((button) => {
   });
 });
 
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
-        document.getElementById('bookingForm').style.display = 'none'; // Verberg het formulier weer
-    document.getElementById('annuleren').style.display = 'none';
-});
+//document.getElementById('bookingForm2').addEventListener('submit', function(e) {
+//  document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
+//document.getElementById('annuleren2').style.display = 'none';
+//});
 
 const bookingForms = document.querySelectorAll('.bookingForm, .bookingForm2');
 
 bookingForms.forEach((form) => {
   form.addEventListener('submit', function(e) {
-    e.preventDefault();
 
     // Dezelfde code als voorheen om de form data te verwerken
 
@@ -132,20 +160,18 @@ bookingForms.forEach((form) => {
 });
 
 
-document.getElementById('bookingForm2').addEventListener('submit', function(e) {
-  document.getElementById('bookingForm2').style.display = 'none'; // Verberg het formulier weer
-document.getElementById('annuleren2').style.display = 'none';
-});
+
 
 
     //---------------FETCH verzoek naar API voor WIJZIGEN----------------------
-    const bookingform = document.querySelector('.bookingForm')
-    const bookingform2 = document.querySelector('.bookingForm2')
+    const bookingForm = document.querySelectorAll('.bookingForm');
+    const bookingForms2 = document.querySelectorAll('.bookingForm2');
 
-    bookingform.addEventListener('submit', event => {
+    bookingForm.forEach((form) => {
+    form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    var bookingformData = new FormData(bookingform);
+    var bookingformData = new FormData(form);
     var object = {};
 
     bookingformData.forEach(function (value, key) {
@@ -164,32 +190,35 @@ document.getElementById('annuleren2').style.display = 'none';
         },
         body: json,
       });
+  });
+});
+
+    bookingForms2.forEach((form) => {
+    form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    var bookingformData = new FormData(form);
+    var object = {};
+
+    bookingformData.forEach(function (value, key) {
+      object[key] = value;
     });
 
-    //--------------------------FETCH voor VERWIJDEREN BOEKING------------------
-    bookingform2.addEventListener('submit', event => {
-      event.preventDefault();
+    var json = JSON.stringify(object);
 
-      var bookingformData = new FormData(bookingform2);
-      var object = {};
+    console.log(json);
 
-      bookingformData.forEach(function (value, key) {
-        object[key] = value;
+    fetch("http://localhost:5500/api/klanten/boekingen/verwijderen/:id", {
+        method: "DELETE",
+        headers:
+        {
+            'Content-Type': 'application/json',
+        },
+        body: json,
       });
+  });
+});
 
-      var json = JSON.stringify(object);
-
-      console.log(json);
-
-      fetch("http://localhost:5500/api/klanten/boekingen/verwijderen/:id", {
-          method: "DELETE",
-          headers:
-          {
-              'Content-Type': 'application/json',
-          },
-          body: json,
-        });
-    });
 
     });
   })
