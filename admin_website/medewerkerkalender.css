@@ -31,7 +31,7 @@ header {
     display:flex;
     align-items:center;
     font-size:20px;
-    margin:0 0 0 45%;
+    margin:0 0 0 50%;
 }
 
 h1 {
@@ -79,45 +79,3 @@ header a {
 }
 
 /* --einde header----------------------------------------------------------------------*/
-
-/* --main--------------------------------------------------------------------------------*/
-
-main {
-    display:flex;
-    flex-direction:column;
-    background:#fff;
-    margin:25px 25px 25px 25px;
-    padding:0px 0px 0px 0px;
-    border:#254D32 5px solid;
-}
-
-.login {
-    padding:20px;
-}
-
-label {
-    padding:20px 20px 20px 0;
-
-}
-
-.submit {
-    margin:10px 0 10px 0;
-    padding:5px 20px 5px 20px;
-    background:#fff;
-    border-radius:5px;
-}
-
-.submit:hover {
-    background:#668F54;
-    transition: 0.5s;
-}
-
-.Email {
-    margin:5px 0 5px 0;
-}
-
-.Wachtwoord {
-    margin:5px 0 5px 0;
-}
-
-/* --einde main-------------------------------------------------------------------------*/

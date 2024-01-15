@@ -1,5 +1,6 @@
 * {
     box-sizing:border-box;
+    margin:0;
 }
 
 body {
@@ -52,7 +53,7 @@ h3 {
 
 .headercontainer {
     display:flex;
-    padding:0 0 0 40px;
+    padding:10px 0 0 40px;
 }
 
 
@@ -193,32 +194,32 @@ header li {
 .pagedirectory {
     display:flex;
     flex-direction: column;
-    background:#3db64f;
+    background:#69B578;
     margin:40px 10px 0px 10px;
     border-radius:40px 40px 0px 0px;
 }
 
 .Duurzaamheid {
     display:flex;
-    background:#3db64f;
+    background:#69B578;
     margin:0px 10px 0px 10px;
 }
 
 .Omgeving {
     display:flex;
-    background:#3db64f;
+    background:#69B578;
     margin:0px 10px 0px 10px;
 }
 
 .Activiteiten {
     display:flex;
-    background:#3db64f;
+    background:#69B578;
     margin:0px 10px 0px 10px;
 }
 
 .Boeking_annuleren {
     display:flex;
-    background:#3db64f;
+    background:#69B578;
     margin:0px 10px 0px 10px;
 }
 
@@ -226,7 +227,7 @@ header li {
 
 .Plattegrond {
     display:flex;
-    background:#3db64f;
+    background:#69B578;
     margin:0px 10px 0px 10px;
     border-radius:0px 0px 40px 40px;
 }
@@ -243,59 +244,79 @@ header li {
 
 /* --eind plattegrond---------------------------------------------------------------------------------- */
 
-/* --nieuwsbrief--------------------------------------------------------------------------------------- */
+/* --einde main--------------------------------------------------------------------------------------- */
+
+/* --footer en nieuwsbrief---------------------------------------------------------------------------- */
+
+footer {
+    display:flex;
+    flex-direction: column;
+    margin:200px 0 0 0;
+}
 
 .nieuwsbrief {
     display:flex;
-    text-align:center;
-    flex-direction:column;
-    margin:100px 0 15px 0px;
-    text-align:left;
+    flex-direction:column;    
+    align-items:center;
+    background:#e8f5ff;
+    padding:20px 0 20px 0;
+    margin:40px 0 0 0;
 }
 
-.nieuwsbriefbtncontainer {
+.nieuwsbriefinputcontainer {
+    display:flex;
+    justify-content:center;
+    padding:20px 0 0 0;
+}
+
+.nieuwsbrief label {
+    font-size:15px;
+}
+
+.nieuwsbriefinput1 {
+    padding:15px 80px 15px 80px;
+    margin:0 5px 0 0;
+    border:#000 solid 1px;
+    border-radius:10px;
+}
+
+.nieuwsbriefinput2 {
+    padding:15px 40px 15px 40px;
+    margin:0 0 0 5px;
+    border:none;
+    border-radius:10px;
+    background:#5980f6;
+}
+
+#nieuwsbriefpopup {
+    padding:15px 0 0 0;
+}
+
+.infoline {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    background:#f1efef;
+    padding:20px 0 20px 0;
+}
+
+.contact {
     display:flex;
     flex-direction:column;
     text-align:center;
+}   
+
+.infotext a {
+    text-decoration:none;
 }
 
-.formitems {
-    display:flex;
-    flex-direction:column;
+.contacttext {
+    padding:10px 10px 10px 10px;
 }
 
-.aanmelden {
-    color:#fff;
-    font-size:20px;
-    background-color:#3F7CAC;
-    border-radius:40px;
-    border:#000 0px solid;
-    padding:10px 60px 10px 60px;
+h4 {
+    font-size:19px;
 }
 
-.aanmelden:hover {
-    background-color:#0D3B66;
-}
-
-.formitems input {
-    padding:20px 200px 20px 20px;
-    margin:20px 0 10px 0;
-}
-
-
-/* --einde nieuwsbrief-------------------------------------------------------------------------------- */
-
-/* --einde main--------------------------------------------------------------------------------------- */
-
-/* --footer------------------------------------------------------------------------------------------- */
-
-footer {
-    display:flex; 
-    align-items: center;
-    flex-direction: column;
-    justify-content:center;   
-    background-color:#209f33;
-}
-
-
-/* --einde footer------------------------------------------------------------------------------------- */
+/* --einde footer en nieuwsbrief---------------------------------------------------------------------- */
