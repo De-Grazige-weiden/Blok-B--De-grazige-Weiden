@@ -1,6 +1,6 @@
 //------------------fetch API--------------------
 
-fetch('http://localhost:5500/api/boekingen')
+fetch('http://localhost:8080/api/boekingen')
   .then(response => response.json())
   .then(data => { // 'data' is nu de array van boekingen
   console.log(data);
@@ -165,7 +165,7 @@ bookingForms.forEach((form) => {
 
     console.log(json);
 
-    fetch("http://localhost:5500/api/klanten/boekingen/wijzigen/:id", {
+    fetch("http://localhost:8080/api/klanten/boekingen/wijzigen/:id", {
         method: "PATCH",
         headers:
         {
@@ -191,7 +191,7 @@ bookingForms.forEach((form) => {
 
     console.log(json);
 
-    fetch("http://localhost:5500/api/klanten/boekingen/verwijderen/:id", {
+    fetch("http://localhost:8080/api/klanten/boekingen/verwijderen/:id", {
         method: "DELETE",
         headers:
         {
