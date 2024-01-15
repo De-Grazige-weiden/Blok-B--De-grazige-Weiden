@@ -17,7 +17,7 @@ var mysql = require('mysql');
 const db = mysql.createConnection ({
   user:"root",
   host: "localhost",
-  password: "",
+  password: "dbgrazeweide",
   database: "database boekingen",
 });
 
@@ -80,8 +80,8 @@ function createMailOptions(klant) {
   });
  });
  
- app.listen(5500, function() {
-  console.log('Server is running on port 5500');
+ app.listen(8080, function() {
+  console.log('Server is running on port 8080');
  });
 
 
