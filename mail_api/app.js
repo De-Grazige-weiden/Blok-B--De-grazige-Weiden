@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors({ origin: 'http://127.0.0.1:5500' }));  
+app.use(cors({ 
+  origin: ['http://127.0.0.1:5500', 'http://127.0.0.1.admin:5500'] }));  
 
 //--------------------database------------
 var mysql = require('mysql');
@@ -16,7 +17,7 @@ var mysql = require('mysql');
 const db = mysql.createConnection ({
   user:"root",
   host: "localhost",
-  password: "",
+  password: "dbgrazeweide",
   database: "database boekingen",
 });
 
@@ -64,7 +65,7 @@ function createMailOptions(klant) {
   };
  }
  
- app.post('/send-email', function(req, res) {
+ app.post('/api/send-email', function(req, res) {
  
   let mailOptions = createMailOptions(req.body);
  
@@ -79,27 +80,26 @@ function createMailOptions(klant) {
   });
  });
  
- app.listen(5500, function() {
-  console.log('Server is running on port 5500');
+ app.listen(8080, function() {
+  console.log('Server is running on port 8080');
  });
 
 
 //----------------------------- RESTFUL API---------------------------------------------
 
-//---------------------------BOEKING AANMAKEN EN VERSTUREN NAAR DB--------------------
-app.post('/klanten/boekingen', (req, res) => {
-  //const klantId = req.params.id;
+//----------------KLANT WEBSITE-----------BOEKING AANMAKEN EN VERSTUREN NAAR DB--------------------
+app.post('/api/klanten/boekingen', (req, res) => {
   const postData = {
-    verblijfssoort: req.body.verblijfssoort || null,
-    aankomstDatum: req.body.aankomstDatum || null,
-    vertrekDatum: req.body.vertrekDatum || null,
-    aantalPersonen: req.body.aantalPersonen || null,
-    voorkeuren: req.body.voorkeuren || null,
-    voorNaam: req.body.voorNaam || null,
-    achterNaam: req.body.achterNaam || null,
-    tussenVoegsel: req.body.tussenVoegsel || null,
-    telefoonNummer: req.body.telefoonNummer || null,
-    email: req.body.email || null
+    verblijfssoort: req.body.verblijfssoort,
+    aankomstDatum: req.body.aankomstDatum,
+    vertrekDatum: req.body.vertrekDatum,
+    aantalPersonen: req.body.aantalPersonen,
+    voorkeuren: req.body.voorkeuren,
+    voorNaam: req.body.voorNaam,
+    achterNaam: req.body.achterNaam,
+    tussenVoegsel: req.body.tussenVoegsel,
+    telefoonNummer: req.body.telefoonNummer,
+    email: req.body.email
   };
   
   var values = [postData.verblijfssoort, postData.aankomstDatum, postData.vertrekDatum, postData.aantalPersonen, postData.voorkeuren, postData.voorNaam, postData.achterNaam, postData.tussenVoegsel, postData.telefoonNummer, postData.email];
@@ -117,29 +117,60 @@ app.post('/klanten/boekingen', (req, res) => {
   });
 
 
-//--------------------------------------BOEKING WIJZIGEN EN STUREN NAAR DB----------------
-//app.patch('/klanten/boekingen/wijzigen/:id', (req, res) => {
-//  const klantId = req.params.id;
-//  const postData = {
-//    verblijfssoort: req.body.verblijfssoort || null,
-//    aankomstDatum: req.body.aankomstDatum || null,
-//    vertrekDatum: req.body.vertrekDatum || null,
-//    aantalPersonen: req.body.aantalPersonen || null,
-//    voorkeuren: req.body.voorkeuren || null,
-//    voorNaam: req.body.voorNaam || null,
-//    achterNaam: req.body.achterNaam || null,
-//    tussenVoegsel: req.body.tussenVoegsel || null,
-//    phoneNumber: req.body.telefoonNummer || null,
-//    email: req.body.email || null
-//  };
-//
-//  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstEnVertrek = ?, aantalPersonen = ?, voorkeuren = ?, voorNaam = ?, achterNaam = ?, tussenVoegsel = ?, phoneNumber = ?, email = ? WHERE klantId = ?';
-//
-//  db.query(sql, [booking.verblijfssoort, booking.aankomstEnVertrek, booking.aantalPersonen, booking.voorkeuren, booking.voorNaam, booking.achterNaam, booking.tussenVoegsel, booking.phoneNumber, booking.email, klantId], (err, result) => {
-//    if (err) {
-//      res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
-//      return;
-//    }
-//    res.send('<script>alert("Uw boeking is succesvol gewijzigd!"); window.location.href="/";</script>');
-//  });
-//});
+
+//----------------------ADMIN PAGINA---BOEKINGEN OPVRAGEN---------------------
+app.get('/api/boekingen', (req, res) => {
+
+  var sql = 'SELECT * FROM boeking';
+
+  db.query(sql, (err, result) => {
+      if (err) {
+          console.log(err);
+          res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
+          return;
+      }
+      res.json(result);
+  });
+});
+
+//----------------ADMIN PAGINA----------------------BOEKING WIJZIGEN EN STUREN NAAR DB----------------
+app.patch('/api/klanten/boekingen/wijzigen/:id', (req, res) => {
+  
+    let verblijfssoort = req.body.verblijfssoort;
+    let aankomstdatum = req.body.aankomstdatum;
+    let vertrekdatum = req.body.vertrekdatum;
+    let aantalpersonen = req.body.aantalpersonen;
+    let voorkeuren = req.body.voorkeuren;
+    let voornaam = req.body.voornaam;
+    let achternaam = req.body.achternaam;
+    let tussenvoegsel = req.body.tussenvoegsel;
+    let telefoonnummer = req.body.telefoonnummer;
+    let email = req.body.email;
+    let id = req.body.ID;
+  
+  const sql = 'UPDATE boeking SET verblijfssoort = ?, aankomstdatum = ?, vertrekdatum = ?, aantalpersonen = ?, voorkeuren = ?, voornaam = ?, achternaam = ?, tussenvoegsel = ?, telefoonnummer = ?, email = ? WHERE ID = ?';
+
+  db.query(sql, [verblijfssoort, aankomstdatum, vertrekdatum, aantalpersonen, voorkeuren, voornaam, achternaam, tussenvoegsel, telefoonnummer, email, id], (err, result) => {
+    if (err) {
+      res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
+      return;
+    }
+    res.send('De boeking is succesvol gewijzigd!');
+  });
+});
+
+//------------------admin pagina--------boeking verwijderen--------------------
+app.delete('/api/klanten/boekingen/verwijderen/:id', (req, res) => {
+  
+  let klantId = req.body.ID;
+
+  const sql = 'DELETE FROM boeking WHERE ID = ?';
+
+  db.query(sql, klantId, (err, result) => {
+    if (err) {
+      res.status(500).json({ error: 'Er is een fout opgetreden bij het verwerken van uw verzoek.' });
+      return;
+    }
+    res.send('De boeking is succesvol verwijderd!');
+  });
+});
