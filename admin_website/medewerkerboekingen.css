@@ -80,7 +80,6 @@ header a {
     margin-bottom: 20px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    height: 170px;
     border:#254D32 5px solid;
 }
 .booking h2 {
@@ -153,9 +152,9 @@ form {
     width: 300px;
     margin: 0 auto;
 }
+
 label {
     margin: 10px 0;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -166,4 +165,10 @@ input[type="submit"] {
 
 main {
     font-family: Arial, sans-serif;
+}
+
+strong {
+    color: rgb(0, 146, 0);
+    font-weight: bold;
+    text-decoration: underline;
 }

@@ -16,9 +16,9 @@ fetch('http://localhost:8080/api/boekingen')
 
       <h2>Boeking ${data.ID} </h2>
 
-      <p>Gegevens:<b> Voornaam: ${data.voornaam} – Tussenvoegsel:<b> ${data.tussenvoegsel} – <b>Achternaam:<b> ${data.achternaam} – <b>Telefoonnummer:<b> ${data.telefoonnummer} – <b>Email:<b> ${data.email} </p>
+      <p>Gegevens: <strong>Voornaam:</strong> ${data.voornaam} – <strong>Tussenvoegsel:</strong> ${data.tussenvoegsel} – <strong>Achternaam:</strong> ${data.achternaam} – <strong>Telefoonnummer:</strong> ${data.telefoonnummer} – <strong>Email:</strong> ${data.email} </p>
 
-      <p><b>Verblijfssoort:<b> ${data.verblijfssoort} – <b>Aankomstdatum:<b> ${data.aankomstdatum} – <b>Vertrekdatum:<b> ${data.vertrekdatum} – <b>Aantal personen:<b> ${data.aantalpersonen} – <b>Boekingsnummer:<b> ${data.ID} </p>
+      <p><strong>Verblijfssoort:</strong> ${data.verblijfssoort} – <strong>Aankomstdatum:</strong> ${data.aankomstdatum} – <strong>Vertrekdatum:</strong> ${data.vertrekdatum} – <strong>Aantal personen:</strong> ${data.aantalpersonen} – <strong>Boekingsnummer:</strong> ${data.ID} </p>
 
       <button id="modify" class="modify">Wijzigen</button>
       <button id="cancel" class="cancel">Annuleren</button>
@@ -28,7 +28,7 @@ fetch('http://localhost:8080/api/boekingen')
                 Boekingsnummer:
                 <input type="number" id="id" name="ID">
             </label>
-            <p>Weet u het zeker dat u de boeking wilt verwijderen?</p>
+            <p><b>Weet u het zeker dat u de boeking wilt verwijderen?</b></p>
             <input class="verwijderen" id="verwijderen" type="submit" value="Verwijderen">
             <input class="annuleren2" id="annuleren2" type="submit" value="Annuleren">
           </form>
