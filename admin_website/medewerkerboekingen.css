@@ -79,14 +79,17 @@ header a {
     margin: 10px;
     margin-bottom: 20px;
     padding: 20px;
-    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 170px;
+    border:#254D32 5px solid;
 }
 .booking h2 {
     color: #008000;
+    margin-bottom: 20px;
 }
 .booking p {
     color: #000000;
+    margin-bottom: 20px;
 }
 .booking button {
     padding: 10px;
@@ -131,11 +134,11 @@ header a {
     border-radius: 5px;
     box-shadow: 5px 5px 20px #000000b3;
     position: relative;
-    border: 2px solid rgb(0, 255, 30);
+    border: 2px solid #254D32;
 }
 
 .terug:hover {
-    background-color: #59ff00;;
+    background-color: #43be00;;
     transition-duration: 0.7s;
 }
 
@@ -159,4 +162,8 @@ label {
 }
 input[type="submit"] {
     margin-top: 20px;
+}
+
+main {
+    font-family: Arial, sans-serif;
 }
