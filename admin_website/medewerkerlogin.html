@@ -13,20 +13,38 @@
 
 <header>
 
-    <h1 class="headercontainer"><div class="h1color1">De&nbsp;</div><div class="h1color2">Gr</div><div><img class="h1image" src="./awimg/Cow-icon.png" width="25px"></div><div class="h1color3">ene&nbsp;</div><div class="h1color4">Weide</div></h1>
+    <h1 class="headercontainer"><div class="h1color1">De&nbsp;</div><div class="h1color2">Gr</div><div><img class="h1image" src="./img/Cow-icon.png" width="25px"></div><div class="h1color3">ene&nbsp;</div><div class="h1color4">Weide</div></h1>
     
     <div class="flexheader">
         <p class="headertext">- &nbsp;&nbsp;Mederwerkerwebsite</p>
     </div>
 
-        <p class="headerlogin"><a href="index.html">Home</a></p>
+        <div class="header"><a class="indexlink" href="index.html">Home</a>
+        <a class="kalenderlink" href="medewerkerkalender.html">Kalender</a></div>
     
 </header>
 
 <!--einde header--------------------------------------------------------------------------------------------------------->
 
-        <main>
+<!--main----------------------------------------------------------------------------------------------------------------->
 
-        </main>
+<main>
+    <form class="login" method="" action="">
+        <div class="Email">
+            <label>Email:</label>
+            <input type="email" name="username">
+        </div><br>
+
+        <div class="Wachtwoord">
+            <label>Wachtwoord:</label>
+            <input type="password" name="password">
+        </div><br>
+
+        <input class="submit" type="submit" value="Log In">
+    </form>    
+</main>
+
+<!--einde main----------------------------------------------------------------------------------------------------------->
+<script src="mederwerkerlogin.js"></script>
     </body>  
 </html>
