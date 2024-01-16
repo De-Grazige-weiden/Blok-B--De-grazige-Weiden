@@ -55,7 +55,17 @@ body {
             border: 5px black;
         }
 
-
+        .terug {
+            color: black;
+            font-size: 24px ;
+            text-decoration: none;
+            margin: 20px 0 0 15px;
+            font-weight: bold;
+            background-color: white;
+            padding: 20px 10px 20px 10px ;
+            border-radius: 5px;
+            box-shadow: #000000;
+        }
 
         form {
             display: none; /* Verberg het formulier standaard */
