@@ -201,10 +201,8 @@ bookingForms.forEach((form) => {
       });
   });
 });
-
-
-    });
-  })
+  });
+})
 
   .catch(error => {
     console.error('Error fetching data:', error);

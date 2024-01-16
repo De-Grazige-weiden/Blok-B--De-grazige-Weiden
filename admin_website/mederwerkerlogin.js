@@ -11,7 +11,7 @@ form.addEventListener("submit",(e)=>{
     const authenticated = authentication(username,password)
 
     if(authenticated){
-        window.location.href = "admin-boeking.html"
+        window.location.href = "medewerkerboekingen.html"
     }else{
         alert("wrong")
     }
