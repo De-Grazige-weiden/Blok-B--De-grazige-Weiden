@@ -1,28 +1,36 @@
 //--------------------LOGIN----------------------------
 
-const form = document.querySelector(".login")
+//const form = document.querySelector(".login")
+//
+//form.addEventListener("submit",(e)=>{
+//    e.preventDefault()
+//
+//    const email = form.email.value
+//    const password = form.password.value
+//
+//    const authenticated = authentication(email,password)
+//
+//    if(authenticated){
+//        window.location.href = "medewerkerboekingen.html"
+//    }else{
+//        alert("wrong")
+//    }
+//})
+//
+//// function for checking username and password
+//
+//function authentication(email,password){
+//    if(email === "bert.grazeweide@gmail.nl" && password === "grazeweide"){
+//        return true
+//    }else{
+//        return false
+//    }
+//}
 
-form.addEventListener("submit",(e)=>{
-    e.preventDefault()
 
-    const username = form.username.value
-    const password = form.password.value
 
-    const authenticated = authentication(username,password)
 
-    if(authenticated){
-        window.location.href = "medewerkerboekingen.html"
-    }else{
-        alert("wrong")
-    }
-})
 
-// function for checking username and password
 
-function authentication(username,password){
-    if(username === "bert.grazeweide@gmail.nl" && password === "grazeweide"){
-        return true
-    }else{
-        return false
-    }
-}
+
+

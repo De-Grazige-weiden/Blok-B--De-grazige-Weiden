@@ -30,7 +30,7 @@ fetch('http://localhost:8080/api/boekingen')
             </label>
             <p><b>Weet u het zeker dat u de boeking wilt verwijderen?</b></p>
             <input class="verwijderen" id="verwijderen" type="submit" value="Verwijderen">
-            <input class="annuleren2" id="annuleren2" type="submit" value="Annuleren">
+            <input class="annuleren2" id="annuleren2" type="button" value="Annuleren">
           </form>
 
         <form class="bookingForm" id="bookingForm">
@@ -80,7 +80,7 @@ fetch('http://localhost:8080/api/boekingen')
           </label>
           
           <input class="wijzigen" id="wijzigen" type="submit" value="Wijzigen">
-          <input class="annuleren" id="annuleren" type="submit" value="Annuleren">
+          <input class="annuleren" id="annuleren" type="button" value="Annuleren">
         </form>
     </div>
       `;
@@ -144,6 +144,30 @@ bookingForms.forEach((form) => {
     form.style.display = 'none';
   });
 });
+
+
+//------------------annuleren knop--WIJZIGEN------------------------
+const eersteKnop = document.querySelectorAll('#annuleren');
+
+eersteKnop.forEach((knop) => {
+  knop.addEventListener('click', function(e) {
+    formWijzigen.forEach((form) => {
+      form.style.display = 'none';
+    });
+  });
+});
+
+//------------------annuleren knop--ANNULEREN------------------------
+const tweedeKnop = document.querySelectorAll('#annuleren2');
+
+tweedeKnop.forEach((knop) => {
+  knop.addEventListener('click', function(e) {
+    formVerwijderen.forEach((form) => {
+      form.style.display = 'none';
+    });
+  });
+});
+
 
 
     //---------------FETCH verzoek naar API voor WIJZIGEN----------------------
