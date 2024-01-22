@@ -175,26 +175,3 @@ app.delete('/api/klanten/boekingen/verwijderen/:id', (req, res) => {
   });
 });
 
-
-
-
-//----------------login--------------------------
-app.post("/", function(req,res){
-  var username = req.body.email;
-  var password = req.body.password;
-
-  connection.query("select * from loginuser where user_name = ? and user_pass = ?",[username,password],function(error,results,fields){
-      if (results.length > 0) {
-          res.redirect("/medewerkerboekingen.html");
-      } else {
-          res.redirect("/");
-      }
-      res.end();
-  })
-})
-
-// when login is success
-app.get("/welcome",function(req,res){
-  res.sendFile(__dirname + "/medewerkerlogin.html")
-})
-
