@@ -17,8 +17,6 @@ form.addEventListener("submit",(e)=>{
     }
 })
 
-// function for checking username and password
-
 function authentication(email,password){
     if(email === "bert.grazeweide@gmail.nl" && password === "grazeweide"){
         return true
