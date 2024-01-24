@@ -48,12 +48,12 @@ function formSubmitFunction() {
     let element = document.createElement('div');
     element.setAttribute('data-name', Informatie.name);
     element.innerHTML = `
-      
+      <div class="Informatiestyle">
       <br>
       <h3>${Informatie.title}</h3>
       <br>
       <p class="description">${Informatie.description}</p>
-      
+      </div>
     `;
     container.appendChild(element);
     });

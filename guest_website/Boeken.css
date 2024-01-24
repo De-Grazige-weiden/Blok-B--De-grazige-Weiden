@@ -245,7 +245,7 @@ li {
 .boekbutton1 {
     display:flex;
     justify-content:center;
-    color:#fff;
+    color:#000;
     background-color:#3F7CAC;
     font-size:20px;
     border:none;
@@ -257,6 +257,7 @@ li {
 
 .boekbutton1:hover {
     background-color:#0D3B66;
+    transition: 0.5s;
 }
 
 @media (max-width:1000px){
@@ -388,7 +389,7 @@ li {
 footer {
     display:flex;
     flex-direction: column;
-    margin:200px 0 0 0;
+    margin:80px 0 0 0;
 }
 
 .nieuwsbrief {
