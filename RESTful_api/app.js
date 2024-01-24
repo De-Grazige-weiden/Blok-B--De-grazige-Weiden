@@ -34,8 +34,7 @@ db.connect((err) => {
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'aleksvansanten@gmail.com',
-    pass: 'ujwk mmsj pjvh sapf'
+    //gmail gegevens
   }
 });
 
