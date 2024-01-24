@@ -39,4 +39,36 @@ function formSubmitFunction() {
 
 
 
+  fetch('Meerinfodata.json')
+  .then(response => response.json())
+  .then(data => {
+    let container = document.getElementById('Informatie');
+
+    data.Informaties.forEach(Informatie => {
+    let element = document.createElement('div');
+    element.setAttribute('data-name', Informatie.name);
+    element.innerHTML = `
+      <div class="Informatiestyle">
+      <br>
+      <h3>${Informatie.title}</h3>
+      <br>
+      <p class="description">${Informatie.description}</p>
+      </div>
+    `;
+    container.appendChild(element);
+    });
+  })
+.catch(error => {
+    console.error('Error fetching data:', error);
+});
+
+function setupEventListener(boxObject) {
+    let extraTekst = boxObject.querySelector('.Meerinfodata');
+    let box = boxObject.querySelector('.box');
+  
+    extraTekst.style.display = "none";
+}
+
+
+
 
